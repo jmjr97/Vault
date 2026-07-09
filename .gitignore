@@ -1,0 +1,9 @@
+dotfiles/zsh/.zcompdump
+dotfiles/alacritty/*.bak
+dotfiles/i3wm/polybar/config.ini.bak
+dotfiles/bspwm/polybar/config.ini.bak
+dotfiles/nvim/lazy-lock.json
+dotfiles/btop/btop.log
+scripts/installer/__pycache__
+dotfiles/shared-configs/nvim/lazy-lock.json
+/home/john/Vault/dotfiles/shared-configs/aseprite/sessions
