@@ -1,0 +1,9 @@
+[Desktop Entry]
+
+Type=Application
+Name=Localsend
+Comment=File sharing over wifi
+Exec=/home/john/Apps/localsend.AppImage
+Icon=
+Terminal=false
+Categories=Utility;

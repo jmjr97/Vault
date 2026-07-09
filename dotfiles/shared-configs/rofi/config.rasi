@@ -1,0 +1,19 @@
+// ======================================================================
+// Config: Rofi
+// File: onfig.rasi
+// ======================================================================
+
+@theme "/home/john/.config/rofi/themes/mytheme.rasi"
+
+configuration {
+	// remove needed binds
+	kb-mode-complete: "";
+	kb-remove-char-back: "BackSpace";
+	kb-accept-entry: "Return,KP_Enter,Control+i";
+	kb-remove-to-eol: "";
+
+	kb-mode-next: "Control+l";
+	kb-mode-previous: "Control+h";
+	kb-row-up: "Up,Control+k";
+	kb-row-down: "Down,Control+j";
+}

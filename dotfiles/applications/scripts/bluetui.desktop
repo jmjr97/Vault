@@ -1,0 +1,10 @@
+[Desktop Entry]
+
+Type=Application
+Name=BlueTui
+Comment=A Bluetooth Tui
+Exec=hyprctl eval 'hl.dispatch(hl.dsp.exec_cmd( "ghostty -e bluetui", { tag = "float_d" }))'
+Icon=
+Terminal=false
+Categories=Utility;
+StartupNotify=false

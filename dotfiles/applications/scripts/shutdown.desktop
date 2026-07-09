@@ -1,0 +1,7 @@
+[Desktop Entry]
+
+Type=Application
+Name=Shutdown
+Exec=shutdown now
+Terminal=false
+Categories=;

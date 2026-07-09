@@ -1,0 +1,9 @@
+[Desktop Entry]
+
+Type=Application
+Name=Musescore
+Comment=Music Notation
+Exec=/home/john/Apps/musescore.AppImage
+Icon=
+Terminal=false
+Categories=Utility;

@@ -1,0 +1,299 @@
+// ======================================================================
+// Config: Waybar
+// File: config.jsonc
+// Platform: archbox
+// ======================================================================
+
+[{
+  // Main Monitor
+  "output": "DP-1",
+  // "height": 26, // Waybar height (to be removed for auto height)
+	"margin": 6,
+	"spacing": 4,
+  "modules-left": [
+    "clock",
+		"group/launchers",
+		"hyprland/windowcount"
+  ],
+	"modules-center": [
+    "hyprland/workspaces"
+	],
+  "modules-right": [
+		"network",
+		"keyboard-state",
+		"group/media",
+    "pulseaudio",
+		"custom/pacman",
+		"custom/weather",
+    "idle_inhibitor",
+		"custom/notify",
+    "custom/power"
+  ],
+	"group/launchers": {
+		"orientation": "horizontal",
+		"modules":[
+			"custom/files",
+			"custom/web",
+			"custom/obsidian"
+		]
+	},
+	"hyprland/windowcount": {
+    "format": " {}",
+    "separate-outputs": true
+	},
+	"group/media": {
+		"orientation": "horizontal",
+		"modules":[
+			"custom/prev",
+			"custom/play",
+			"custom/next"
+		]
+	},
+  "clock": {
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "format": "{:%a, %b %d - <span color='#f5a97f'>%I:%M</span>}",
+		"calendar": {
+			"mode": "month",
+			"mode-mon-col": 3,
+			"format": {
+				"months": "<span color='#8aadf4'><b>{}</b></span>",
+				"days": "<span color='#b8c0e0'><b>{}</b></span>",
+				"weeks": "<span color='#a6da95'><b>{}</b></span>",
+				"weekdays": "<span color='#eed49f'><b>{}</b></span>",
+				"today": "<span color='#ed8796'><b><u>{}</u></b></span>"
+			}
+		},
+		"on-click": "firefox https://calendar.google.com"
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5"
+    },
+		"persistent-workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": []
+		}
+  },
+  "custom/divider": {
+    "format": "⏽"
+  },
+  "custom/sep": {
+    "format": " ",
+    // "format": "",
+  },
+	"custom/files": {
+		"format": "",
+		"tooltip": false,
+		"on-click": "dolphin"
+	},
+  "custom/web": {
+    "format": "󰖟",
+		"tooltip": false,
+    "on-click": "firefox"
+  },
+  "custom/obsidian": {
+    "format": "",
+		"tooltip": false,
+    "on-click": "obsidian"
+  },
+  "custom/pacman": {
+    "interval": 180,
+    "exec": "checkupdates | wc -l",
+		"on-click": "checkupdates | wc -l",
+		"on-click-right": "checkupdates | rofi -dmenu",
+    "format": "<span foreground='#8aadf4'>󰮯</span> {}",
+    "tooltip-format": "{} Packages Ready to Install"
+  },
+  "custom/weather": {
+    "interval": 300,
+    "exec": "~/Vault/my-apps/weather",
+    "format": "{}",
+		"on-click": "firefox https://weather.com/"
+  },
+	"network": {
+		"format-ethernet": "",
+		"format-disconnected": " no net "
+	},
+	"keyboard-state": {
+		"numlock": false,
+		"capslock": true,
+		"format": "{icon}",
+		"format-icons": {
+			"locked": " Caps ",
+			"unlocked": " "
+		}
+	},
+  "custom/prev": {
+    "format": "󰙤",
+    "on-click":"playerctl --player=spotify previous",
+		"tooltip": false
+  },
+  "custom/play": {
+    "format": "",
+    "on-click": "playerctl --player=spotify play-pause",
+		"on-click-right": "flatpak run com.spotify.Client",
+		"tooltip": false
+  },
+  "custom/next": {
+    "format": "󰙢",
+    "on-click": "playerctl --player=spotify next",
+		"tooltip": false
+  },
+  "pulseaudio": {
+    "scroll-step": 5, // %, can be a float
+    "format": "{icon} <span foreground='#f5a97f'>{volume}%</span>",
+    "format-icons": {
+        "alsa_output.usb-Logitech_PRO_000000000000-00.analog-stereo": "",
+        "alsa_output.pci-0000_09_00.4.analog-stereo": "󰓃"
+    },
+
+    "on-click": "~/Vault/scripts/audio.sh swap",
+    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+        "activated": "",
+        "deactivated": "󱋑"
+    }
+  },
+	"custom/notify": {
+		"format": "󰎟",
+		"tooltip": false,
+		"on-click": "swaync-client -t -sw"
+	},
+  "custom/power": {
+    "format": "⏻",
+    "on-click": "wlogout -b 5",
+		"tooltip": false
+  }
+},
+{
+  // Side Monitor
+  "output": "HDMI-A-1",
+  "height": 26, // Waybar height (to be removed for auto height)
+	"margin": 6,
+	"spacing": 4,
+  "modules-left": [
+    "clock",
+    "tray",
+		"hyprland/windowcount",
+		"bluetooth"
+  ],
+	"modules-center": [
+    "hyprland/workspaces"
+	],
+  "modules-right": [
+    "temperature",
+    "custom/gpu",
+    "cpu",
+    "memory",
+		"group/storage"
+  ],
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "6": "1",
+      "7": "2",
+      "8": "3",
+      "9": "4",
+      "10": "5"
+    },
+		"persistent-workspaces": {
+			"6": [],
+			"7": [],
+			"8": [],
+			"9": [],
+			"10": []
+		}
+  },
+	"group/storage": {
+		"orientation": "horizontal",
+		"modules":[
+			"disk",
+			"disk#games",
+			"disk#storage"
+		]
+	},
+  "clock": {
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "format": "{:%a, %b %d - <span color='#f5a97f'>%I:%M</span>}",
+		"calendar": {
+			"mode": "year",
+			"mode-mon-col": 3,
+			"format": {
+				"months": "<span color='#8aadf4'><b>{}</b></span>",
+				"days": "<span color='#b8c0e0'><b>{}</b></span>",
+				"weeks": "<span color='#a6da95'><b>{}</b></span>",
+				"weekdays": "<span color='#eed49f'><b>{}</b></span>",
+				"today": "<span color='#ed8796'><b><u>{}</u></b></span>"
+			}
+		},
+		"on-click": "firefox https://calendar.google.com"
+  },
+  "custom/divider": {
+    "format": "⏽"
+  },
+  "custom/sep": {
+    "format": ""
+  },
+  "tray": {
+    "icon-size": 20,
+    "spacing": 10,
+    "show-passive-items": true
+  },
+	"hyprland/windowcount": {
+    "format": " {}",
+    "separate-outputs": true
+	},
+	"bluetooth": {
+		"format": "󰂯",
+		"format-connected": "󰂱 <span foreground='#f5a97f'>{device_alias}</span>",
+		"format-disabled": "󰂯 <span foreground='#f5a97f'>Off</span>",
+		"on-click": "$HOME/Vault/scripts/launchers/launcher.sh bluetui",
+		"on-click-right": "$HOME/Vault/scripts/bluetooth.sh"
+	},
+  "temperature": {
+    // "thermal-zone": 2,
+    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+    "critical-threshold": 80,
+    // "format-critical": "{temperatureC}°C {icon}",
+    "format": "<span foreground='#8aadf4'>{icon}</span> {temperatureC}°C",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip": false
+  },
+  "custom/gpu": {
+    "exec": "$HOME/Vault/scripts/gpu-temp.sh",
+    "interval": 5,
+    "format": "<span foreground='#8aadf4'>󰢮</span> {}",
+    "tooltip": false
+  },
+  "cpu": {
+    "format": "<span foreground='#8aadf4'></span> {usage}%",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "<span foreground='#8aadf4'></span> {used}GB",
+    "tooltip": false
+  },
+  "disk": {
+    "format": "<span foreground='#8aadf4'>󰋊</span> {percentage_used}%",
+    "path": "/"
+    },
+  "disk#games": {
+    "format": "<span foreground='#8aadf4'></span> {percentage_used}%",
+    "path": "/run/media/Games/"
+    },
+  "disk#storage": {
+    "format": "<span foreground='#8aadf4'></span> {percentage_used}%",
+    "path": "/run/media/Storage/"
+    }
+}]

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Escape From Duckov
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/3167020
+Icon=steam
+Terminal=false
+Type=Application
+Categories=Game;

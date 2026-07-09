@@ -1,0 +1,10 @@
+[Desktop Entry]
+
+Type=Application
+Name=LazyGit
+Comment=Git Tui
+Exec=hyprctl eval 'hl.dispatch(hl.dsp.exec_cmd( "ghostty -e lazygit -p ~/Vault", { tag = "float_d" }))'
+Icon=/home/john/Vault/icons/lazygit.png
+Terminal=false
+Categories=Utility;
+StartupNotify=false

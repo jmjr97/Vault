@@ -1,0 +1,9 @@
+[Desktop Entry]
+
+Type=Application
+Name=Dice Roller
+Comment=DnD Dice Rolling App
+Exec=/home/john/Vault/my-apps/dice-roller
+Icon=
+Terminal=false
+Categories=Utility;

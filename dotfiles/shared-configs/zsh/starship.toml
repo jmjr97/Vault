@@ -1,0 +1,65 @@
+format = """
+$jobs\
+$hostname\
+[\uf07c  ](#8aadf4)\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$cmd_duration\
+$line_break\
+$python\
+$character"""
+command_timeout = 500
+
+[hostname]
+ssh_only = false
+format = '[$ssh_symbol](#8aadf4)[$hostname](#8aadf4) '
+
+[directory]
+style = '#8aadf4'
+read_only_style = '#ed8796' 
+read_only = '󰌾 '
+format = '[$read_only]($read_only_style)[$path]($style)'
+truncation_length = 10
+truncation_symbol = '…/'
+
+[character]
+success_symbol = '[❯](#8aadf4)'
+error_symbol = '[❯](#ed8796)'
+vimcmd_symbol = '[❮](#eed49f)'
+
+[git_branch]
+format = ' [$symbol $branch]($style) '
+style = '#f5bde6'
+symbol = '󰊢'
+# symbol = ''
+
+[git_status]
+format = '[[($conflicted$untracked$modified$staged$renamed$deleted)](#ed8796)($ahead_behind$stashed)]($style)'
+style = '#8aadf4'
+conflicted = ' '
+untracked = '󰰩 ' 
+modified = '󰰑 '
+staged = '󰰣 '
+renamed = '​'
+deleted = '​'
+stashed = '≡ '
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = 'bright-black'
+
+[cmd_duration]
+format = ' [$duration]($style) '
+style = '#eed49f'
+
+[python]
+format = '[$virtualenv]($style) '
+style = 'bright-black'
+
+[jobs]
+symbol = ' '
+style = '#ed8796'
+number_threshold = 1
+format = '[$symbol]($style)'

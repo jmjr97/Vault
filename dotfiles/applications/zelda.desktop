@@ -1,0 +1,10 @@
+[Desktop Entry]
+
+Type=Application
+Name=Zelda - OoT
+Comment=Zelda from N64
+Exec=/home/john/Apps/zelda-oot/soh.AppImage
+Path=/home/john/Apps/zelda-oot/
+Icon=
+Terminal=false
+Categories=Game;

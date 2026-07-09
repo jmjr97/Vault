@@ -1,0 +1,243 @@
+// ======================================================================
+// Config: Waybar
+// File: profiles/bars/config.jsonc
+// Platform: archbook
+// ======================================================================
+
+{
+	"layer": "top",
+	"spacing": 4, // Gaps between modules (4px)
+
+	////////////
+	// layout //
+	////////////
+
+	"modules-left": [
+		"ext/workspaces",
+		"custom/break",
+		"tray",
+		"custom/break",
+		"network",
+		"custom/break",
+		"group/launchers",
+		"hyprland/windowcount"
+	],
+	"modules-center": [
+		"custom/scroll-left",
+		"clock",
+		"custom/break",
+		"custom/weather",
+		"custom/scroll-right"
+	],
+	"modules-right": [
+		"pulseaudio",
+		"custom/break",
+		"temperature",
+		"custom/break",
+		"cpu",
+		"custom/break",
+		"memory",
+		"custom/break",
+		"disk",
+		"custom/break",
+		"custom/pacman",
+		"custom/break",
+		"battery",
+		"custom/break",
+		"group/control"
+	],
+
+	////////////
+	// groups //
+	////////////
+
+	"group/launchers": {
+		"orientation": "horizontal",
+		"modules":[
+			"custom/files",
+			"custom/web",
+			"custom/obsidian"
+		]
+	},
+	"group/control": {
+		"orientation": "horizontal",
+		"modules":[
+			"idle_inhibitor",
+			"custom/notify",
+			"custom/power"
+		]
+	},
+
+	/////////////
+	// modules //
+	/////////////
+
+	"custom/break": {
+		"format": ""
+	},
+	// left modules //
+	"ext/workspaces": {
+		"format": "{icon}",
+		"on-click": "activate",
+		"format-icons": {
+			"1": "1",
+			"2": "2",
+			"3": "3",
+			"4": "4",
+			"5": "5"
+		},
+		"persistent-workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": []
+		},
+		"on-scroll-up": "~/Vault/scripts/waybar/hypr_dsp.sh workspace_next",
+		"on-scroll-down": "~/Vault/scripts/waybar/hypr_dsp.sh workspace_prev"
+	},
+	"tray": {
+		"icon-size": 20,
+		"spacing": 10,
+		"show-passive-items": true
+	},
+	"network": {
+		"interval": 60,
+		"interface": "wlan0",
+		"format": "{ifname}",
+		"format-wifi": "{essid} (<span foreground='#e0af68'>{signalStrength}%</span>) ",
+		"format-disconnected": "", //An empty format will hide the module.
+		"max-length": 50,
+		"tooltip": false,
+		"on-click": "ghostty --class='com.me.float' -e impala"
+	},
+	"custom/files": {
+		"format": "",
+		"on-click": "dolphin"
+	},
+	"custom/web": {
+		"format": "󰖟",
+		"on-click": "firefox"
+	},
+	"custom/obsidian": {
+		"format": "",
+		"on-click": "obsidian"
+	},
+	"hyprland/windowcount": {
+		"format": "<span color='#a9b1d6'></span>  <span color='#e0af68'>{}</span>",
+		"format-empty": " ",
+		"separate-outputs": true
+	},
+	// center modules //
+	"custom/scroll-left": {
+    "format": "󰄽",
+		"tooltip": false,
+		"on-click": "~/Vault/scripts/waybar/hypr_dsp.sh left"
+  },
+	"clock": {
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"format": "{:%a, %b %d - <span color='#e0af68'>%I:%M</span>}",
+		"calendar": {
+			"mode": "month",
+			"mode-mon-col": 3,
+			"format": {
+				"months": "<span size='20pt' color='#7aa2f7'><b>{}</b></span>",
+				"days": "<span size='18pt' color='#787c99'><b>{}</b></span>",
+				"weeks": "<span color='#9ece6a'><b>{}</b></span>",
+				"weekdays": "<span color='#eed49f'><b>{}</b></span>",
+				"today": "<span color='#f7768e'><b><u>{}</u></b></span>"
+			}
+		},
+		"actions": {
+			"on-click-right": "mode",
+			"on-scroll-up": "tz_up",
+			"on-scroll-down": "tz_down",
+			"on-scroll-up": "shift_up",
+			"on-scroll-down": "shift_down",
+			"on-click": "firefox https://calendar.google.com"
+		}
+	},
+	"custom/weather": {
+		"interval": 300,
+		"exec": "~/Vault/my-apps/weather",
+		"format": "{}",
+		"on-click": "firefox https://weather.com/"
+	},
+	"custom/scroll-right": {
+    "format": "󰄾",
+		"tooltip": false,
+		"on-click": "~/Vault/scripts/waybar/hypr_dsp.sh right"
+  },
+	// right modules //
+	"pulseaudio": {
+		"max-volume": 150,
+		"scroll-step": 5, // %, can be a float
+		"format": "{icon} <span foreground='#e0af68'>{volume}%</span>",
+		"format-muted": " <span foreground='#e0af68'>{volume}%</span>",
+		"format-icons": {
+			"headphone": "",
+			"default": ["", "", ""]
+		},
+		"tooltip-format": " Left Click: Mute\nRight Click: Pavucontrol",
+		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"on-click-right": "pavucontrol"
+	},
+	"temperature": {
+		// "thermal-zone": 2,
+		// "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+		"critical-threshold": 80,
+		// "format-critical": "{temperatureC}°C {icon}",
+		"format": "{icon} <span foreground='#e0af68'>{temperatureC}°C</span>",
+		"format-icons": ["", "", "", "", ""],
+		"tooltip": false
+	},
+	"cpu": {
+		"format": " <span foreground='#e0af68'>{usage}%</span>",
+		"tooltip": false
+	},
+	"memory": {
+		"format": " <span foreground='#e0af68'>{used}GB</span>",
+		"tooltip": false
+	},
+	"disk": {
+		"format": "󰋊 <span foreground='#e0af68'>{percentage_used}%</span>"
+	},
+	"custom/pacman": {
+		"interval": 180,
+		"exec": "checkupdates | wc -l",
+		"format": "󰮯 <span foreground='#e0af68'>{}</span>",
+		"on-click": "~/Vault/my-apps/pac-updates",
+    "tooltip-format": " Left Click: view\nRight Click: refesh"
+	},
+	"battery": {
+		"states": {
+				// "good": 95,
+				"warning": 30,
+				"critical": 15
+		},
+		"format": "{icon} <span foreground='#e0af68'>{capacity}%</span>",
+		"format-full": "{icon} <span foreground='#e0af68'>{capacity}%</span>",
+		"format-charging": " <span foreground='#e0af68'>{capacity}%</span>",
+		"format-plugged": " <span foreground='#e0af68'>{capacity}%</span>",
+		"format-alt": "{icon} <span foreground='#e0af68'>{time}</span>",
+		"format-icons": ["", "", "", "", ""]
+	},
+	"idle_inhibitor": {
+		"format": "{icon}",
+		"format-icons": {
+			"activated": "",
+			"deactivated": "󱋑"
+		}
+	},
+	"custom/notify": {
+		"format": "󰍜",
+		// "format": "󰎟",
+		"tooltip": false,
+		"on-click": "swaync-client -t -sw"
+	},
+	"custom/power": {
+		"format": "⏻",
+		"on-click": "wlogout -b 5",
+		"tooltip": false
+	}
+}

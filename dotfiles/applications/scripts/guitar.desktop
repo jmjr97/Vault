@@ -1,0 +1,9 @@
+[Desktop Entry]
+
+Type=Application
+Name=Play Guitar
+Comment=Launches Guitarix & QpwGraph
+Exec=/home/john/Vault/scripts/guitar.sh
+Icon=
+Terminal=false
+Categories=;

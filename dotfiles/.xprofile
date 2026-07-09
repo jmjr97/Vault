@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Paths
+export PATH=$PATH:/usr/local/go/bin
+export ZDOTDIR=$HOME/.config/zsh
+
+# Configire Displays
+xrandr --output HDMI-0 --off --output DP-0 --off --output DP-1 --mode 1920x1080 --rate 75 --pos 1920x0 --rotate normal --output DP-2 --off --output DP-3 --primary --mode 1920x1080 --rate 75 --pos 0x0 --rotate normal --output DP-4 --off --output DP-5 --off
+
+xsetroot -cursor_name left_ptr &
+xcape -e 'Control_L=Escape'
+
+# Autostart
+# mailspring --background --password-store="gnome-libsecret" &
+discord --start-minimized --disable-gpu &
+flameshot &
+xfce4-power-manager &
+spotifyd &
+dunst &
+lxsession &
+nitrogen --restore &
+picom &

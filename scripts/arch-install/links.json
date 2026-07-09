@@ -1,0 +1,34 @@
+{
+  "shared-configs": {
+    "/home/john/Vault/dotfiles/shared-configs/bat": "bat",
+    "/home/john/Vault/dotfiles/shared-configs/btop": "btop",
+    "/home/john/Vault/dotfiles/shared-configs/fastfetch": "fastfetch",
+    "/home/john/Vault/dotfiles/shared-configs/fish": "fish",
+    "/home/john/Vault/dotfiles/shared-configs/ghostty": "ghostty",
+    "/home/john/Vault/dotfiles/shared-configs/lazygit": "lazygit",
+    "/home/john/Vault/dotfiles/shared-configs/nvim": "nvim",
+    "/home/john/Vault/dotfiles/shared-configs/yazi": "yazi"
+  },
+  "main-rig": {
+    "hyprland": {
+      "/home/john/Vault/dotfiles/main-rig/hyprland/hypr": "hypr",
+      "/home/john/Vault/dotfiles/main-rig/hyprland/swaync": "swaync",
+      "/home/john/Vault/dotfiles/main-rig/hyprland/swayosd": "swayosd",
+      "/home/john/Vault/dotfiles/main-rig/hyprland/waybar": "waybar",
+      "/home/john/Vault/dotfiles/shared-configs/rofi": "rofi",
+      "/home/john/Vault/dotfiles/shared-configs/wlogout": "wlogout",
+      "/home/john/Vault/dotfiles/shared-configs/satty": "satty"
+    }
+  },
+  "archbook": {
+    "hyprland": {
+      "/home/john/Vault/dotfiles/archbook/hyprland/hypr": "hypr",
+      "/home/john/Vault/dotfiles/archbook/hyprland/swaync": "swaync",
+      "/home/john/Vault/dotfiles/archbook/hyprland/swayosd": "swayosd",
+      "/home/john/Vault/dotfiles/archbook/hyprland/waybar": "waybar",
+      "/home/john/Vault/dotfiles/shared-configs/rofi": "rofi",
+      "/home/john/Vault/dotfiles/shared-configs/wlogout": "wlogout",
+      "/home/john/Vault/dotfiles/shared-configs/satty": "satty"
+    }
+  }
+}

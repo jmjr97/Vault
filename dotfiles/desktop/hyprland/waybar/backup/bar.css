@@ -1,0 +1,165 @@
+/* ======================================================================
+ * Config: Waybar
+ * File: style.css
+ * Desc: full bar
+ * Platform: archbox
+ *=====================================================================
+*/
+
+* {
+  font-family: Firacode Nerd Font Propo, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+}
+
+window#waybar {
+	background: rgba(30,30,46,0.6);
+	/* background: #1e1e2e; */
+	border-radius: 6px;
+}
+
+tooltip {
+  background: #1e1e2e;
+  border: 1px solid #8aadf4;
+  border-radius: 5px;
+}
+
+tooltip label {
+  color: #cad3f5;
+}
+
+#workspaces {
+  color: #8aadf4;
+}
+
+#workspaces button {
+	transition: all 200ms ease-in-out;
+  color: #8aadf4;
+  padding: 0 8px;
+  border-radius: 6px;
+	margin: 4px 0px;
+}
+
+#workspaces button label {
+  font-size: 20px;
+}
+
+#workspaces button.active {
+	min-width: 50px;
+  background: #8aadf4;
+	color: #24273a;
+	margin: 4px 0px;
+}
+
+#workspaces button.empty {
+  color: #494d64;
+}
+
+#clock {
+	color: #8aadf4;
+	padding: 2 10px;
+	margin-left: 10px;
+}
+
+/* main screen */
+
+#launchers {
+	color: #8aadf4;
+	font-weight: bold;
+	padding: 2 10px;
+}
+
+#custom-web {	
+	padding: 2 10px;
+}
+
+#media {
+	color: #8aadf4;
+	font-weight: bold;
+	padding: 2 10px;
+}
+
+#custom-play {	
+	padding: 2 10px;
+}
+
+#bluetooth,
+#custom-clip,
+#custom-picker,
+#pulseaudio,
+#idle_inhibitor,
+#custom-notify {
+	color: #8aadf4;
+	padding: 2 10px;
+}
+
+#pulseaudio.muted {
+	color: #ed8796;
+}
+
+#idle_inhibitor.activated {
+	color: #ed8796;
+}
+
+#custom-power {
+	color: #8aadf4;
+	font-weight: bold;
+	padding: 2 10px;
+	margin-right: 10px;
+}
+
+#custom-files:hover,
+#custom-web:hover,
+#custom-obsidian:hover,
+#custom-prev:hover,
+#custom-play:hover,
+#custom-next:hover,
+#pulseaudio:hover,
+#custom-clip:hover,
+#custom-picker:hover,
+#bluetooth:hover,
+#idle_inhibitor:hover,
+#idle_inhibitor.activated:hover,
+#custom-notify:hover,
+#custom-power:hover {
+	color: #cad3f5;
+}
+
+/* right screen */
+
+#tray {
+	color: #cad3f5;
+	padding: 2 10px;
+}
+
+#custom-pacman,
+#temperature,
+#custom-gpu,
+#cpu,
+#memory {
+	color: #f5a97f;
+	padding: 2 10px;
+}
+
+#custom-weather {
+	color: #8aadf4;
+	padding: 2 10px;
+}
+
+#storage {
+	color: #f5a97f;
+	padding: 2 10px;
+	margin-right: 10px;
+}
+
+#disk.home {
+	padding-left: 10px;
+}
+
+#disk.games {
+	padding: 2 10px;
+}
+
+#network {
+	color: #ed8796;
+	padding: 2 10px;
+}

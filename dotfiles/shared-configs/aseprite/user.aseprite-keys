@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<keyboard version="1">
+    <commands>
+        <key command="ExportSpriteSheet" shortcut="Ctrl+E" removed="true"/>
+        <key command="AdvancedMode" shortcut="Ctrl+F" removed="true"/>
+        <key command="Exit" shortcut="Ctrl+Q" removed="true"/>
+        <key command="Undo" shortcut="Z"/>
+        <key command="Undo" shortcut="Ctrl+Z"/>
+        <key command="Redo" shortcut="Ctrl+R" removed="true"/>
+        <key command="Clear" shortcut="Ctrl+D"/>
+        <key command="Fill" shortcut="F" removed="true"/>
+        <key command="Stroke" shortcut="S" removed="true"/>
+        <key command="HueSaturation" shortcut="Ctrl+F"/>
+        <key command="CanvasSize" shortcut="C" removed="true"/>
+        <key command="DeselectMask" shortcut="Ctrl+D" removed="true"/>
+        <key command="ShowGrid" shortcut="Ctrl+&apos;" removed="true"/>
+        <key command="ShowGrid" shortcut="1"/>
+        <key command="ShowPixelGrid" shortcut="Ctrl+Shift+&apos;" removed="true"/>
+        <key command="ShowPixelGrid" shortcut="2"/>
+        <key command="PaletteEditor" shortcut="A" removed="true"/>
+        <key command="Zoom" shortcut="`" removed="true">
+            <param name="percentage" value="50"/>
+        </key>
+        <key command="Zoom" shortcut="1" removed="true">
+            <param name="percentage" value="100"/>
+        </key>
+        <key command="Zoom" shortcut="2" removed="true">
+            <param name="percentage" value="200"/>
+        </key>
+        <key command="PixelPerfectMode" shortcut="N" removed="true"/>
+        <key command="PixelPerfectMode" shortcut="Alt" removed="true"/>
+        <key command="AddColor" shortcut="Super" removed="true">
+            <param name="source" value="fg"/>
+        </key>
+        <key command="AddColor" shortcut="`">
+            <param name="source" value="fg"/>
+        </key>
+        <key command="Rotate" shortcut="Ctrl+2">
+            <param name="angle" value="180"/>
+            <param name="target" value="mask"/>
+        </key>
+        <key command="Rotate" shortcut="Ctrl+3">
+            <param name="angle" value="90"/>
+            <param name="target" value="mask"/>
+        </key>
+        <key command="Rotate" shortcut="Ctrl+1">
+            <param name="angle" value="-90"/>
+            <param name="target" value="mask"/>
+        </key>
+    </commands>
+    <tools>
+        <key tool="rectangular_marquee" shortcut="M" removed="true"/>
+        <key tool="rectangular_marquee" shortcut="Q"/>
+        <key tool="rectangular_marquee" shortcut="Q"/>
+        <key tool="lasso" shortcut="Q" removed="true"/>
+        <key tool="lasso" shortcut="Ctrl+Q"/>
+        <key tool="pencil" shortcut="B" removed="true"/>
+        <key tool="pencil" shortcut="E"/>
+        <key tool="pencil" shortcut="E"/>
+        <key tool="spray" shortcut="Shift+B" removed="true"/>
+        <key tool="spray" shortcut="Ctrl+E"/>
+        <key tool="eraser" shortcut="E" removed="true"/>
+        <key tool="eraser" shortcut="R" removed="true"/>
+        <key tool="eraser" shortcut="Ctrl+R"/>
+        <key tool="eyedropper" shortcut="I" removed="true"/>
+        <key tool="zoom" shortcut="Z" removed="true"/>
+        <key tool="line" shortcut="L" removed="true"/>
+        <key tool="line" shortcut="A"/>
+        <key tool="curve" shortcut="Shift+L" removed="true"/>
+        <key tool="curve" shortcut="Shift+A"/>
+        <key tool="rectangle" shortcut="U" removed="true"/>
+        <key tool="rectangle" shortcut="S" removed="true"/>
+        <key tool="rectangle" shortcut="D"/>
+        <key tool="filled_rectangle" shortcut="U" removed="true"/>
+        <key tool="filled_rectangle" shortcut="S" removed="true"/>
+        <key tool="filled_rectangle" shortcut="D"/>
+        <key tool="ellipse" shortcut="Shift+U" removed="true"/>
+        <key tool="ellipse" shortcut="Ctrl+D" removed="true"/>
+        <key tool="ellipse" shortcut="F" removed="true"/>
+        <key tool="ellipse" shortcut="Shift+D"/>
+        <key tool="filled_ellipse" shortcut="Shift+U" removed="true"/>
+        <key tool="filled_ellipse" shortcut="Ctrl+D" removed="true"/>
+        <key tool="filled_ellipse" shortcut="F" removed="true"/>
+        <key tool="filled_ellipse" shortcut="Shift+D"/>
+        <key tool="contour" shortcut="D" removed="true"/>
+        <key tool="contour" shortcut="S" removed="true"/>
+        <key tool="contour" shortcut="F"/>
+        <key tool="polygon" shortcut="Shift+D" removed="true"/>
+        <key tool="polygon" shortcut="Shift+F"/>
+        <key tool="blur" shortcut="R" removed="true"/>
+        <key tool="jumble" shortcut="R" removed="true"/>
+    </tools>
+    <quicktools>
+        <key tool="eyedropper" shortcut="N" removed="true"/>
+        <key tool="eyedropper" shortcut="Alt"/>
+        <key tool="move" shortcut="Ctrl" removed="true"/>
+        <key tool="hand" shortcut="Space"/>
+        <key tool="hand" shortcut="U"/>
+        <key tool="eraser" shortcut="R"/>
+        <key tool="zoom" shortcut="C" removed="true"/>
+        <key tool="zoom" shortcut="Ctrl+Space" removed="true"/>
+        <key tool="zoom" shortcut="Space" removed="true"/>
+        <key tool="zoom" shortcut="I" removed="true"/>
+        <key tool="zoom" shortcut="Ctrl" removed="true"/>
+    </quicktools>
+    <actions/>
+    <wheel/>
+    <drag>
+        <key action="Zoom" vector="8,0" shortcut="C"/>
+    </drag>
+</keyboard>

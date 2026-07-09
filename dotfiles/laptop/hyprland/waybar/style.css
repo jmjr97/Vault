@@ -1,0 +1,111 @@
+/* ======================================================================
+ * Config: Waybar
+ * File: profiles/bar/style.css
+ * Desc: bar layout
+ * Platform: laptop
+ *=====================================================================
+*/
+
+* {
+	/* `otf-font-awesome` is required to be installed for icons */
+	font-family: Firacode Nerd Font Propo, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+}
+
+window#waybar {
+	background: rgba(26, 27, 38, 0.6);
+}
+
+tooltip {
+	background: rgba(26, 27, 38, 1.0);
+	border: 1px solid #89b4fa;
+	border-radius: 5px;
+}
+
+#custom-break {
+	color: #cdd6f4;
+	font-weight: bold;
+}
+
+/* left modules */
+#workspaces {
+	margin-left: 5;
+}
+
+#workspaces button {
+	padding: 3px;
+	color: #5b5b70;
+	border-radius: 0;
+}
+
+#workspaces button.empty {
+	color: #cdd6f4;
+}
+
+#workspaces button.active {
+	color: #89b4fa;
+	/* border-bottom: 2px solid #89b4fa; */
+	font-weight: bold;
+}
+
+#tray {
+	margin: 0 10px;
+}
+
+#network,
+#launchers,
+#custom-web {
+	color: #89b4fa;
+	margin: 0 10px;
+}
+
+/* center modules */
+#windowcount {
+	color: #89b4fa;
+}
+
+#custom-scroll-left,
+#custom-scroll-right,
+#clock,
+#custom-weather {
+	color: #89b4fa;
+	margin: 0 10px;
+}
+
+/* right modules */
+#pulseaudio,
+#temperature,
+#cpu,
+#memory,
+#disk,
+#custom-pacman,
+#battery,
+#control {
+	color: #89b4fa;
+	margin: 0 10px;
+}
+
+#custom-notify {
+	color: #89b4fa;
+	margin: 0 14px;
+}
+
+/* mouse hover */
+#custom-scroll-left:hover,
+#custom-scroll-right:hover,
+#network:hover,
+#custom-files:hover,
+#custom-web:hover,
+#custom-obsidian:hover,
+#custom-weather:hover,
+#pulseaudio:hover,
+#custom-pacman:hover,
+#idle_inhibitor:hover,
+#custom-notify:hover,
+#custom-power:hover {
+	color: #cdd6f4;
+}
+
+#idle_inhibitor.activated {
+	color: #f38ba8;
+}

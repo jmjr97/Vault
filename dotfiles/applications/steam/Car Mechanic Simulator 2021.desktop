@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Car Mechanic Simulator 2021
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/1190000
+Icon=steam
+Terminal=false
+Type=Application
+Categories=Game;

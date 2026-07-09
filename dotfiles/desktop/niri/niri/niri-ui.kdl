@@ -1,0 +1,44 @@
+//#############################
+//# ███╗░░██╗██╗██████╗░██╗ ###
+//# ████╗░██║██║██╔══██╗██║ ###
+//# ██╔██╗██║██║██████╔╝██║ ###
+//# ██║╚████║██║██╔══██╗██║ ###
+//# ██║░╚███║██║██║░░██║██║ ###
+//# ╚═╝░░╚══╝╚═╝╚═╝░░╚═╝╚═╝ ###
+//############ ui #############
+
+layout {
+  gaps 8
+  center-focused-column "never"
+	always-center-single-column
+
+  preset-column-widths {
+		proportion 0.5
+		proportion 0.66667
+  }
+
+  default-column-width { proportion 0.5; }
+		
+  focus-ring {
+		off
+		width 2
+		active-color "#8aadf4"
+		inactive-color "#505050"
+  }
+
+  border {
+		on
+		width 1
+		active-color "#8aadf4"
+		inactive-color "#505050"
+		urgent-color "#9b0000"
+  }
+}
+
+animations {
+    // Uncomment to turn off all animations.
+    // off
+
+    // Slow down all animations by this factor. Values below 1 speed them up instead.
+    // slowdown 3.0
+}

@@ -1,0 +1,336 @@
+// ======================================================================<D-A>
+// Config: Waybar
+// File: profiles/bar/config.jsonc
+// Platform: main-rig
+// ======================================================================
+
+[{
+  // main screen
+  "output": "DP-1",
+	"spacing": 4,
+  "modules-left": [
+    "ext/workspaces",
+		"custom/break",
+		"group/launchers",
+		"hyprland/windowcount",
+		"custom/layout"
+  ],
+	"modules-center": [
+    "clock",
+		"custom/break",
+		"custom/weather"
+	],
+  "modules-right": [
+		"network",
+		"group/media",
+		"custom/break",
+    "pulseaudio",
+		"custom/break",
+		"custom/pacman",
+		"custom/break",
+		"group/control"
+  ],
+	"custom/break": {
+		"format": ""
+	},
+	"group/launchers": {
+		"orientation": "horizontal",
+		"modules":[
+			"custom/files",
+			"custom/web",
+			"custom/obsidian"
+		]
+	},
+	"group/media": {
+		"orientation": "horizontal",
+		"modules":[
+			"custom/prev",
+			"custom/play",
+			"custom/next"
+		]
+	},
+	"group/control": {
+		"orientation": "horizontal",
+		"modules":[
+			"idle_inhibitor",
+			"custom/notify",
+			"custom/power"
+		]
+	},
+	"hyprland/windowcount": {
+    "format": "<span color='#cdd6f4'></span>  <span color='#fab387'>{}</span> ",
+		"format-empty": " ",
+    "separate-outputs": true
+	},
+  "clock": {
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "format": "{:%a, %b %d - <span color='#fab387'>%I:%M</span>}",
+		"calendar": {
+			"mode": "month",
+			"mode-mon-col": 3,
+			"format": {
+				"months": "<span size='20pt' color='#89b4fa'><b>{}</b></span>",
+				"days": "<span size='18pt' color='#bac2de'><b>{}</b></span>",
+				"weeks": "<span color='#a6e3a1'><b>{}</b></span>",
+				"weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+				"today": "<span color='#f38ba8'><b><u>{}</u></b></span>"
+			}
+		},
+		"actions": {
+			"on-click": "firefox https://calendar.google.com",
+			"on-click-right": "mode",
+			"on-scroll-up": "tz_down",
+			"on-scroll-down": "tz_up",
+			"on-scroll-up": "shift_down",
+			"on-scroll-down": "shift_up"
+		}
+  },
+  "ext/workspaces": {
+    "format": "{icon}",
+		"min-width": 0,
+		"on-click": "activate",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5"
+    },
+		"persistent-workspaces": {
+			"1": ["DP-1"],
+			"2": ["DP-1"],
+			"3": ["DP-1"],
+			"4": ["DP-1"],
+			"5": ["DP-1"]
+		},
+		"on-scroll-up": "~/Vault/scripts/waybar/hypr_dsp.sh workspace_next",
+		"on-scroll-down": "~/Vault/scripts/waybar/hypr_dsp.sh workspace_prev"
+  },
+	"custom/files": {
+		"format": "",
+		"tooltip": false,
+		"on-click": "~/Vault/scripts/waybar/hypr_dsp.sh files_left",
+		"on-click-right": "~/Vault/scripts/waybar/hypr_dsp.sh files_right"
+	},
+  "custom/web": {
+    "format": "󰖟",
+		"tooltip": false,
+		"on-click": "~/Vault/scripts/waybar/hypr_dsp.sh web_left",
+		"on-click-right": "~/Vault/scripts/waybar/hypr_dsp.sh web_right"
+  },
+  "custom/obsidian": {
+    "format": "",
+		"on-click": "~/Vault/scripts/waybar/hypr_dsp.sh obsidian_left",
+		"on-click-right": "~/Vault/scripts/waybar/hypr_dsp.sh obsidian_right"
+  },
+	"hyprland/window": {
+		"format": "<span foreground='#cdd6f4'></span> {title}",
+		"max-length": 50
+	},
+	"custom/layout": {
+		"interval": 30,
+		"exec": "~/Vault/scripts/waybar/layout.sh",
+		"signal": 1
+	},
+  "custom/pacman": {
+    "interval": 180,
+    "exec": "$HOME/Vault/scripts/env/hyprland/updates.sh",
+		"on-click": "~/Vault/my-apps/pac-updates/pac-updates",
+    "on-click-right": "$HOME/Vault/scripts/env/hyprland/updates.sh",
+    "format": "󰮯 <span foreground='#fab387'>{}</span>",
+    "tooltip-format": "{} Packages Ready to Install\nRight Click: refesh."
+  },
+  "custom/weather": {
+    "interval": 300,
+    "exec": "~/Vault/my-apps/weather",
+    "format": "{}",
+		"on-click": "firefox https://weather.com/"
+  },
+	"network": {
+		"format-ethernet": "",
+		"format-disconnected": " no net "
+	},
+  "custom/prev": {
+    "format": "󰙤",
+    "on-click":"playerctl --player=spotify previous",
+		"tooltip": false
+  },
+  "custom/play": {
+    "format": "",
+    "on-click": "playerctl --player=spotify play-pause",
+		"on-click-right": "flatpak run com.spotify.Client",
+		"tooltip": false
+  },
+  "custom/next": {
+    "format": "󰙢",
+    "on-click": "playerctl --player=spotify next",
+		"tooltip": false
+  },
+  "pulseaudio": {
+    "scroll-step": 5, // %, can be a float
+    "format": "{icon} <span foreground='#fab387'>{volume}%</span>",
+    "format-icons": {
+        "alsa_output.usb-Logitech_PRO_000000000000-00.analog-stereo": "",
+        "alsa_output.pci-0000_09_00.4.analog-stereo": "󰓃"
+    },
+		"tooltip-format": "  Left Click: Swap Outputs\n Right Click: Mute\nMiddle Click: Pavucontorl",
+    "on-click": "~/Vault/scripts/waybar/audio.sh swap",
+    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"on-click-middle": "pavucontrol"
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+        "activated": "",
+        "deactivated": "󱋑"
+    }
+  },
+	"custom/notify": {
+		"format": "󰎟",
+		"tooltip": false,
+		"on-click": "swaync-client -t -sw"
+	},
+  "custom/power": {
+    "format": "⏻",
+    "on-click": "wlogout -b 5",
+		"tooltip": false
+  }
+},
+{
+  // side screen
+  "output": "HDMI-A-1",
+	"spacing": 4,
+  "modules-left": [
+    "ext/workspaces",
+		"custom/break",
+    "tray",
+		"hyprland/windowcount"
+  ],
+	"modules-center": [
+    "clock",
+		"custom/break",
+		"bluetooth"
+	],
+  "modules-right": [
+    "temperature",
+		"custom/break",
+    "custom/gpu",
+		"custom/break",
+    "cpu",
+		"custom/break",
+    "memory",
+		"custom/break",
+		"group/storage"
+  ],
+	"custom/break": {
+		"format": ""
+	},
+  "ext/workspaces": {
+    "format": "{icon}",
+		"on-click": "activate",
+    "format-icons": {
+      "6": "1",
+      "7": "2",
+      "8": "3",
+      "9": "4",
+      "10": "5"
+    },
+		"persistent-workspaces": {
+			"1": ["HDMI-A-1"],
+			"2": ["HDMI-A-1"],
+			"3": ["HDMI-A-1"],
+			"4": ["HDMI-A-1"],
+			"5": ["HDMI-A-1"]
+		},
+		"on-scroll-up": "~/.config/waybar/scripts/hypr_dsp.sh workspace_next",
+		"on-scroll-down": "~/.config/waybar/scripts/hypr_dsp.sh workspace_prev"
+  },
+	"group/storage": {
+		"orientation": "horizontal",
+		"modules":[
+			"disk",
+			"disk#games",
+			"disk#storage"
+		]
+	},
+  "clock": {
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "format": "{:%a, %b %d - <span color='#fab387'>%I:%M</span>}",
+		"calendar": {
+			"mode": "month",
+			"mode-mon-col": 3,
+			"format": {
+				"months": "<span size='20pt' color='#89b4fa'><b>{}</b></span>",
+				"days": "<span size='18pt' color='#bac2de'><b>{}</b></span>",
+				"weeks": "<span color='#a6e3a1'><b>{}</b></span>",
+				"weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+				"today": "<span color='#f38ba8'><b><u>{}</u></b></span>"
+			}
+		},
+		"actions": {
+			"on-click-right": "mode",
+			"on-scroll-up": "tz_up",
+			"on-scroll-down": "tz_down",
+			"on-scroll-up": "shift_up",
+			"on-scroll-down": "shift_down",
+			"on-click": "firefox https://calendar.google.com"
+		}
+  },
+  "custom/divider": {
+    "format": "⏽"
+  },
+  "custom/sep": {
+    "format": ""
+  },
+  "tray": {
+    "icon-size": 20,
+    "spacing": 14,
+    "show-passive-items": true
+  },
+	"hyprland/windowcount": {
+    "format": "<span color='#cdd6f4'></span>  <span color='#fab387'>{}</span> ",
+		"format-empty": " ",
+    "separate-outputs": true
+	},
+	"bluetooth": {
+		"format": "󰂯",
+		"format-connected": "󰂱 <span foreground='#fab387'>{device_alias}</span>",
+		"format-disabled": "󰂯 <span foreground='#fab387'>Off</span>",
+		"on-click": "$HOME/Vault/scripts/launchers/main-launcher.sh bluetui"
+	},
+  "temperature": {
+    // "thermal-zone": 2,
+    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+    "critical-threshold": 80,
+    // "format-critical": "{temperatureC}°C {icon}",
+    "format": "{icon} <span foreground='#fab387'>{temperatureC}°C</span>",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip": false
+  },
+  "custom/gpu": {
+    "exec": "$HOME/Vault/scripts/waybar/gpu-temp.sh",
+    "interval": 5,
+    "format": "󰢮 <span foreground='#fab387'>{}</span>",
+    "tooltip": false
+  },
+  "cpu": {
+    "format": " <span foreground='#fab387'>{usage}%</span>",
+    "tooltip": false
+  },
+  "memory": {
+    "format": " <span foreground='#fab387'>{used}GB</span>",
+    "tooltip": false
+  },
+  "disk": {
+    "format": "󰋊 <span foreground='#fab387'>{percentage_used}%</span>",
+    "path": "/"
+    },
+  "disk#games": {
+    "format": " <span foreground='#fab387'>{percentage_used}%</span>",
+    "path": "/run/media/Games/"
+    },
+  "disk#storage": {
+    "format": " <span foreground='#fab387'>{percentage_used}%</span>",
+    "path": "/run/media/Storage/"
+    }
+}]

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Orbyss
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/1385340
+Icon=steam
+Terminal=false
+Type=Application
+Categories=Game;

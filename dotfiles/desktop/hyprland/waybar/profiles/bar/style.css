@@ -1,0 +1,150 @@
+/* ======================================================================
+ * Config: Waybar
+ * File: profiles/bar/style.css
+ * Desc: bar
+ * Platform: main-rig
+ *=====================================================================
+*/
+* {
+	font-family: Firacode Nerd Font Propo, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+}
+
+window#waybar {
+	background: rgba(26, 27, 38, 0.6);
+}
+
+tooltip {
+	background: rgba(26, 27, 38, 1.0);
+	border: 1px solid #89b4fa;
+	border-radius: 5px;
+}
+
+/* shared modules */
+#workspaces {
+	margin-left: 5;
+}
+
+#workspaces button {
+	padding: 3px;
+	color: #5b5b70;
+	border-radius: 0;
+}
+
+#workspaces button.empty {
+	color: #cdd6f4;
+}
+
+#workspaces button.active {
+	color: #89b4fa;
+	/* border-bottom: 2px solid #89b4fa; */
+	font-weight: bold;
+}
+
+#custom-break {
+	color: #cdd6f4;
+	font-weight: bold;
+}
+
+/* left modules */
+/* main screen */
+#launchers {
+	color: #89b4fa;
+	padding: 0 10px;
+}
+
+#custom-web {
+	padding: 0 14px;
+}
+
+#window {
+	color: #fab387;
+}
+
+#custom-layout {
+	color: #89b4fa;
+	margin: 0;
+}
+
+/* side screen */
+#tray {
+	margin: 0 10px;
+}
+
+#bluetooth {
+	color: #89b4fa;
+	margin: 0 10px;
+}
+
+/* center modules */
+#windowcount {
+	color: #89b4fa;
+	/* margin: 0 10px; */
+}
+
+#clock,
+#custom-weather {
+	color: #89b4fa;
+	margin: 0 10px;
+}
+
+/* right modules */
+/* main screen */
+#network.disconnected {
+	color: #f38ba8;
+}
+
+#media,
+#custom-play,
+#pulseaudio,
+#custom-pacman {
+	color: #89b4fa;
+	padding: 0 10px;
+}
+
+#pulseaudio.muted {
+	color: #f38ba8;
+}
+
+#control {
+	color: #89b4fa;
+	padding: 0 10px;
+}
+
+#custom-notify {
+	padding: 0 14px;
+}
+
+/* side screen */
+#temperature,
+#custom-gpu,
+#cpu,
+#memory,
+#storage {
+	color: #89b4fa;
+	padding: 0 10px;
+}
+
+#disk.games {
+	padding: 0 10px;
+}
+
+/* mouse hover */
+#custom-files:hover,
+#custom-web:hover,
+#custom-obsidian:hover,
+#custom-prev:hover,
+#custom-play:hover,
+#custom-next:hover,
+#pulseaudio:hover,
+#custom-pacman:hover,
+#idle_inhibitor:hover,
+#custom-notify:hover,
+#custom-power:hover,
+#bluetooth:hover {
+	color: #cdd6f4;
+}
+
+#idle_inhibitor.activated {
+	color: #f38ba8;
+}

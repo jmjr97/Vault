@@ -1,0 +1,11 @@
+[[keymaps]]
+command = "Quit"
+key_sequence = "q"
+  
+[[keymaps]]
+command = "PageSelectPreviousOrScrollUp"
+key_sequence = "C-u"
+
+[[keymaps]]
+command = "PageSelectNextOrScrollDown"
+key_sequence = "C-d"

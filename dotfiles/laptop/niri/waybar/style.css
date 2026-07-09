@@ -1,0 +1,124 @@
+* {
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: Firacode Nerd Font Propo, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+
+window#waybar {
+	background: transparent;
+}
+
+tooltip {
+  background: #1a1b26;
+  border: 1px solid #7aa2f7;
+  border-radius: 5px;
+}
+
+tooltip label {
+  color: #a9b2d6;
+}
+
+#workspaces {
+	background: #1a1b26;
+	color: #7aa2f7;
+	border: 1px solid #32344a;
+	border-radius: 8px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	padding: 0;
+}
+
+#workspaces button {
+	transition: all 200ms ease-in-out;
+  color: #7aa2f7;
+  padding: 2 2px;
+  border-radius: 6px;
+}
+
+#workspaces button label {
+  font-size: 20px;
+}
+
+#workspaces button.active {
+	min-width: 50px;
+  background: #7aa2f7;
+	color: #1a1b26;
+  padding: 2 8px;
+}
+
+#workspaces button.empty {
+	color: #32344a;
+}
+
+#clock {
+	background: #1a1b26;
+	color: #7aa2f7;
+	border: 1px solid #32344a;
+	border-radius: 8;
+	padding: 0 10px;
+	margin-left: 10px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+#launchers {
+	background: #1a1b26;
+	color: #7aa2f7;
+	border: 1px solid #32344a;
+	border-radius: 8;
+	padding: 0 10px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+#custom-web {
+	padding: 0 10px;
+}
+
+#custom-pacman,
+#custom-clip,
+#pulseaudio,
+#temperature,
+#cpu,
+#memory,
+#disk,
+#backlight,
+#battery,
+#tray,
+#custom-notify,
+#idle_inhibitor {
+	background: #1a1b26;
+	color: #7aa2f7;
+	border: 1px solid #32344a;
+	border-radius: 8;
+	padding: 0 10px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+#pulseaudio.muted {
+	color: #f7768e;
+}
+
+#custom-power {
+	background: #1a1b26;
+	color: #7aa2f7;
+	border: 1px solid #32344a;
+	border-radius: 8;
+	padding: 0 10px;
+	margin-right: 10px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+#custom-files:hover,
+#custom-web:hover,
+#custom-obsidian:hover,
+#custom-clip:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#battery:hover,
+#idle_inhibitor:hover,
+#custom-power:hover {
+	color: #a9b2d6;
+}

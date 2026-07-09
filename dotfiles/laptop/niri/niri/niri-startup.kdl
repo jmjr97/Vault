@@ -1,0 +1,20 @@
+//======================================================================
+//File: ~/.config/niri/niri-startup.kdl
+//======================================================================
+
+spawn-at-startup "systemctl" "--user" "start" "hyprpolkitagent"
+spawn-at-startup "waybar"
+spawn-at-startup "xwayland-satellite"
+spawn-at-startup "hypridle"
+
+spawn-at-startup "swaybg" "-o" "eDP-1" "-i" "/home/john/Vault/Wallpapers/1monitor/nebula.jpg"
+
+spawn-at-startup "swaync"
+spawn-at-startup "swayosd-server"
+
+// spawn-at-startup "steam" "-silent"
+// spawn-at-startup "discord" "--start-minimized"
+spawn-at-startup "dropbox"
+
+spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store" // Stores only text data
+spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store" // Stores only image data

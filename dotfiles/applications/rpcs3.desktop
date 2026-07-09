@@ -1,0 +1,9 @@
+[Desktop Entry]
+
+Type=Application
+Name=RPCS3
+Comment=PS3 Emulator
+Exec=/home/john/Apps/rpcs3.AppImage
+Icon=/home/john/apps/icons/rpcs3.png
+Terminal=false
+Categories=Game;

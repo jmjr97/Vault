@@ -1,0 +1,9 @@
+[Desktop Entry]
+
+Type=Application
+Name=Retroarch
+Comment=Emulation suite
+Exec=/home/john/Apps/retroarch.AppImage
+Icon=
+Terminal=false
+Categories=Utility;

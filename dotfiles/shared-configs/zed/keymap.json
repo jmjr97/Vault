@@ -1,0 +1,83 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "ctrl-i": "picker::ConfirmCompletion",
+      // "ctrl-k": "menu::SelectPrevious",
+      // "ctrl-j": "menu::SelectNext",
+    },
+  },
+  {
+    "context": "Picker > Editor",
+    "bindings": {
+      "escape": "menu::Cancel",
+      "ctrl-k": "menu::SelectPrevious",
+      "ctrl-j": "menu::SelectNext",
+      "ctrl-i": "picker::ConfirmCompletion",
+    },
+  },
+  {
+    "context": "TabSwitcher",
+    "bindings": {
+      "k": "menu::SelectPrevious",
+      "j": "menu::SelectNext",
+      "ctrl-backspace": "tab_switcher::CloseSelectedItem",
+    },
+  },
+  {
+    "context": "ProjectPanel && !editing",
+    "bindings": {
+      "ctrl-e": "workspace::ToggleLeftDock",
+      "enter": ["workspace::SendKeystrokes", "enter ctrl-e"],
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-'": "terminal_panel::Toggle",
+    },
+  },
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "bindings": {
+      "ctrl-k": "editor::ContextMenuPrevious",
+      "ctrl-j": "editor::ContextMenuNext",
+      "ctrl-i": "editor::ConfirmCompletion",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "ctrl-'": "terminal_panel::Toggle",
+      "space e": "workspace::ToggleLeftDock",
+      "space f f": "file_finder::Toggle",
+      "space f o": "outline::Toggle",
+      "space f p": "projects::OpenRecent",
+      "space s": "tab_switcher::Toggle",
+      "shift-h": "vim::GoToPreviousTab",
+      "shift-l": "vim::GoToTab",
+    },
+  },
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual)",
+    "bindings": {
+      "shift-k": "editor::Hover",
+      "ctrl-d": "vim::ScrollDown",
+      "ctrl-u": ["vim::ScrollUp", "editor::ScrollCursorCenter"],
+      // "z z": "editor::ScrollCursorCenter",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    },
+  },
+]

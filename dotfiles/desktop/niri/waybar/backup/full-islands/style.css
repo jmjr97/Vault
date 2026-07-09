@@ -1,0 +1,191 @@
+* {
+  font-family: Firacode Nerd Font Propo, Helvetica, Arial, sans-serif;
+  font-size: 20px;
+}
+
+window#waybar {
+	background: #24273a;
+	border-bottom: 1px solid #494d64;
+}
+
+tooltip {
+  background: #1e1e2e;
+  border: 1px solid #8aadf4;
+  border-radius: 5px;
+}
+
+tooltip label {
+  color: #cad3f5;
+}
+
+#workspaces {
+	background: #181926;
+  color: #8aadf4;
+  border-radius: 8px;
+	margin-top: 6px;
+	margin-bottom: 8px;
+}
+
+#workspaces button {
+	transition: all 200ms ease-in-out;
+  color: #8aadf4;
+  padding: 0 8px;
+  border-radius: 6px;
+}
+
+#workspaces button label {
+  font-size: 20px;
+}
+
+#workspaces button.active {
+	min-width: 50px;
+  background: #8aadf4;
+	color: #24273a;
+}
+
+#workspaces button.empty {
+  color: #494d64;
+}
+
+#clock {
+	background: #181926;
+	color: #8aadf4;
+	border-radius: 8;
+	padding: 0 10px;
+	margin-left: 10px;
+	margin-top: 6px;
+	margin-bottom: 8px;
+}
+
+/* main screen */
+
+#launchers {
+	background: #181926;
+	color: #8aadf4;
+	border-radius: 8;
+	font-weight: bold;
+	padding: 0 10px;
+	margin-top: 6px;
+	margin-bottom: 8px;
+}
+
+#custom-web{	
+	padding: 0 10px;
+}
+
+#media {
+	background: #181926;
+	color: #8aadf4;
+	border-radius: 8;
+	font-weight: bold;
+	padding: 0 10px;
+	margin-top: 6px;
+	margin-bottom: 8px;
+}
+
+#custom-play {	
+	padding: 0 10px;
+}
+
+#custom-clip {
+	background: #181926;
+	color: #8aadf4;
+	border-radius: 8;
+	font-weight: bold;
+	padding: 0 10px;
+	margin-top: 6px;
+	margin-bottom: 8px;
+}
+
+#pulseaudio {
+	background: #181926;
+	color: #8aadf4;
+	border-radius: 8;
+	padding: 0 10px;
+	margin-top: 6px;
+	margin-bottom: 8px;
+}
+
+#pulseaudio.muted {
+	color: #ed8796;
+}
+
+#idle_inhibitor {
+	background: #181926;
+	color: #8aadf4;
+	border-radius: 8;
+	font-weight: bold;
+	padding: 0 10px;
+	margin-top: 6px;
+	margin-bottom: 8px;
+}
+
+#idle_inhibitor.activated {
+	color: #ed8796;
+}
+
+#custom-notify {
+	background: #181926;
+	color: #8aadf4;
+	border-radius: 8;
+	font-weight: bold;
+	padding: 0 10px;
+	margin-top: 6px;
+	margin-bottom: 8px;
+}
+
+#custom-power {
+	background: #181926;
+	color: #8aadf4;
+	border-radius: 8;
+	font-weight: bold;
+	padding: 0 10px;
+	margin-right: 10px;
+	margin-top: 6px;
+	margin-bottom: 8px;
+}
+
+#custom-files:hover,
+#custom-web:hover,
+#custom-obsidian:hover,
+#custom-prev:hover,
+#custom-play:hover,
+#custom-next:hover,
+#pulseaudio:hover,
+#custom-clip:hover,
+#idle_inhibitor:hover,
+#idle_inhibitor.activated:hover,
+#custom-notify:hover,
+#custom-power:hover {
+	color: #cad3f5;
+}
+
+/* right screen */
+
+#tray,
+#custom-pacman,
+#temperature,
+#custom-gpu,
+#cpu,
+#memory {
+	background: #181926;
+	color: #f5a97f;
+	border-radius: 8;
+	padding: 0 10px;
+	margin-top: 6px;
+	margin-bottom: 8px;
+}
+
+#storage {
+	background: #181926;
+	color: #f5a97f;
+	border-radius: 8;
+	padding: 0 10px;
+	margin-right: 10px;
+	margin-top: 6px;
+	margin-bottom: 8px;
+}
+
+#disk.games {
+	padding: 0 10px;
+}

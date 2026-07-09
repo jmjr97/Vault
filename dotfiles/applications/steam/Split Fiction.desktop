@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Split Fiction
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/2001120
+Icon=steam
+Terminal=false
+Type=Application
+Categories=Game;

@@ -1,0 +1,69 @@
+* {
+	background-image: none;
+	box-shadow: none;
+}
+
+window {
+	background-color: rgba(50, 52, 74, 0.2);
+}
+
+button {
+	border-radius: 0;
+	border-color: #1a1b26;
+	text-decoration-color: #a9b1d6;
+	color: #a9b1d6;
+	background-color: #1a1b26;
+	border-style: solid;
+	border-width: 1px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 40%;
+}
+
+/* button:focus, button:active,  */
+button:hover {
+	background-color: #7aa2f7;
+	color: #1a1b26;
+	outline-style: none;
+}
+
+#lock {
+    background-image: image(url("img/lock.png"));
+}
+
+#lock:hover {
+    background-image: image(url("img/lock_hover.png"));
+}
+
+#logout {
+    background-image: image(url("img/logout.png"));
+}
+
+#logout:hover {
+    background-image: image(url("img/logout_hover.png"));
+}
+
+#suspend {
+    background-image: image(url("img/suspend.png"));
+}
+
+#suspend:hover {
+    background-image: image(url("img/suspend_hover.png"));
+}
+
+#shutdown {
+    background-image: image(url("img/shutdown.png"));
+}
+
+#shutdown:hover {
+    background-image: image(url("img/shutdown_hover.png"));
+}
+
+#reboot {
+    background-image: image(url("img/reboot.png"));
+}
+
+#reboot:hover {
+    background-image: image(url("img/reboot_hover.png"));
+}
+

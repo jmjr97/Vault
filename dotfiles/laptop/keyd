@@ -1,0 +1,22 @@
+[ids]
+*
+-706a:0002
+
+[main]
+rightalt = layer(custom)
+capslock = overload(control, esc)
+esc = capslock
+leftalt = leftmeta
+leftmeta = leftalt
+
+[custom]
+e = up
+s = left
+d = down
+f = right
+w = home
+r = end
+a = capslock
+
+
+# Copy to /etc/keyd/default.conf

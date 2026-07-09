@@ -1,0 +1,34 @@
+:root {
+	--background-color: #24273a;
+	--border-color: #5b6078;
+	--label: #8aadf4;
+	--image: #8aadf4;
+	--progress: #8aadf4;
+}
+
+window {
+  border-radius: 8;
+  opacity: 0.97;
+  border: 2px solid var(--border-color);
+
+  background-color: var(--background-color);
+}
+
+label {
+  font-family: 'CaskaydiaMono Nerd Font';
+  font-size: 11pt;
+
+  color: var(--label);
+}
+
+image {
+  color: var(--image);
+}
+
+progressbar {
+  border-radius: 0;
+}
+
+progress {
+  background-color: var(--progress);
+}
