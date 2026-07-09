@@ -14,6 +14,8 @@ gum confirm && aur_check=true || aur_check=false
 if [[ $aur_check == true ]]; then
 	echo ""
 	yay -Syu
+else
+	exit 0
 fi
 
 echo ""

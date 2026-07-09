@@ -95,17 +95,17 @@
         {
           "label": "",
           "type": "button",
-          "command": "cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+          "command": "~/Vault/scripts/swaync.sh clipboard"
         },
         {
           "label": "",
           "type": "button",
-          "command": "~/.config/hypr/scripts/toggle_bars.sh"
+          "command": "~/Vault/scripts/swaync.sh toggle_bars"
         },
         {
           "label": "",
           "type": "button",
-          "command": "hyprpicker -a"
+          "command": "~/Vault/scripts/swaync.sh picker"
         },
         {
           "label": "󰽉",

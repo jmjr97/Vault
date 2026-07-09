@@ -105,7 +105,7 @@
 		"interval": 60,
 		"interface": "wlan0",
 		"format": "{ifname}",
-		"format-wifi": "{essid} (<span foreground='#e0af68'>{signalStrength}%</span>) ",
+		"format-wifi": "{essid} (<span foreground='#fab387'>{signalStrength}%</span>) ",
 		"format-disconnected": "", //An empty format will hide the module.
 		"max-length": 50,
 		"tooltip": false,
@@ -124,7 +124,7 @@
 		"on-click": "obsidian"
 	},
 	"hyprland/windowcount": {
-		"format": "<span color='#a9b1d6'></span>  <span color='#e0af68'>{}</span>",
+		"format": "<span color='#cdd6f4'></span>  <span color='#fab387'>{}</span>",
 		"format-empty": " ",
 		"separate-outputs": true
 	},
@@ -136,16 +136,16 @@
   },
 	"clock": {
 		"tooltip-format": "<tt><small>{calendar}</small></tt>",
-		"format": "{:%a, %b %d - <span color='#e0af68'>%I:%M</span>}",
+		"format": "{:%a, %b %d - <span color='#fab387'>%I:%M</span>}",
 		"calendar": {
 			"mode": "month",
 			"mode-mon-col": 3,
 			"format": {
-				"months": "<span size='20pt' color='#7aa2f7'><b>{}</b></span>",
-				"days": "<span size='18pt' color='#787c99'><b>{}</b></span>",
-				"weeks": "<span color='#9ece6a'><b>{}</b></span>",
-				"weekdays": "<span color='#eed49f'><b>{}</b></span>",
-				"today": "<span color='#f7768e'><b><u>{}</u></b></span>"
+				"months": "<span size='20pt' color='#89b4fa'><b>{}</b></span>",
+				"days": "<span size='18pt' color='#bac2de'><b>{}</b></span>",
+				"weeks": "<span color='#a6e3a1'><b>{}</b></span>",
+				"weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+				"today": "<span color='#f38ba8'><b><u>{}</u></b></span>"
 			}
 		},
 		"actions": {
@@ -172,8 +172,8 @@
 	"pulseaudio": {
 		"max-volume": 150,
 		"scroll-step": 5, // %, can be a float
-		"format": "{icon} <span foreground='#e0af68'>{volume}%</span>",
-		"format-muted": " <span foreground='#e0af68'>{volume}%</span>",
+		"format": "{icon} <span foreground='#fab387'>{volume}%</span>",
+		"format-muted": " <span foreground='#fab387'>{volume}%</span>",
 		"format-icons": {
 			"headphone": "",
 			"default": ["", "", ""]
@@ -187,26 +187,27 @@
 		// "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
 		"critical-threshold": 80,
 		// "format-critical": "{temperatureC}°C {icon}",
-		"format": "{icon} <span foreground='#e0af68'>{temperatureC}°C</span>",
+		"format": "{icon} <span foreground='#fab387'>{temperatureC}°C</span>",
 		"format-icons": ["", "", "", "", ""],
 		"tooltip": false
 	},
 	"cpu": {
-		"format": " <span foreground='#e0af68'>{usage}%</span>",
+		"format": " <span foreground='#fab387'>{usage}%</span>",
 		"tooltip": false
 	},
 	"memory": {
-		"format": " <span foreground='#e0af68'>{used}GB</span>",
+		"format": " <span foreground='#fab387'>{used}GB</span>",
 		"tooltip": false
 	},
 	"disk": {
-		"format": "󰋊 <span foreground='#e0af68'>{percentage_used}%</span>"
+		"format": "󰋊 <span foreground='#fab387'>{percentage_used}%</span>"
 	},
 	"custom/pacman": {
 		"interval": 180,
-		"exec": "checkupdates | wc -l",
-		"format": "󰮯 <span foreground='#e0af68'>{}</span>",
-		"on-click": "~/Vault/my-apps/pac-updates",
+		"exec": "~/Vault/scripts/hyprland/updates.sh",
+		"on-click": "~/Vault/my-apps/pac-updates/pac-updates",
+		"on-click-right": "~/Vault/scripts/hyprland/updates.sh",
+		"format": "󰮯 <span foreground='#fab387'>{}</span>",
     "tooltip-format": " Left Click: view\nRight Click: refesh"
 	},
 	"battery": {
@@ -215,11 +216,11 @@
 				"warning": 30,
 				"critical": 15
 		},
-		"format": "{icon} <span foreground='#e0af68'>{capacity}%</span>",
-		"format-full": "{icon} <span foreground='#e0af68'>{capacity}%</span>",
-		"format-charging": " <span foreground='#e0af68'>{capacity}%</span>",
-		"format-plugged": " <span foreground='#e0af68'>{capacity}%</span>",
-		"format-alt": "{icon} <span foreground='#e0af68'>{time}</span>",
+		"format": "{icon} <span foreground='#fab387'>{capacity}%</span>",
+		"format-full": "{icon} <span foreground='#fab387'>{capacity}%</span>",
+		"format-charging": " <span foreground='#fab387'>{capacity}%</span>",
+		"format-plugged": " <span foreground='#fab387'>{capacity}%</span>",
+		"format-alt": "{icon} <span foreground='#fab387'>{time}</span>",
 		"format-icons": ["", "", "", "", ""]
 	},
 	"idle_inhibitor": {
