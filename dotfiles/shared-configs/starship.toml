@@ -1,3 +1,10 @@
+# ======================================================================
+# Config: Starship
+# File: ~/.config/starship.toml
+# Platform: shared
+# Link: https://github.com/starship/starship
+# ======================================================================
+
 format = """
 $jobs\
 $hostname\

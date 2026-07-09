@@ -1,7 +1,8 @@
 // ======================================================================
 // Config: Waybar
-// File: config.jsonc
-// Platform: archbox
+// File: ~/.config/waybar/config.jsonc
+// Desc: islands
+// Platform: desktop
 // ======================================================================
 
 [{

@@ -1,3 +1,10 @@
+# ======================================================================
+# Config: Yazi
+# File: ~/.config/yazi/yazi.toml
+# Platform: shared
+# Link: https://github.com/sxyazi/yazi
+# ======================================================================
+
 [mgr]
 ratio          = [ 1, 3, 4 ]
 sort_by        = "natural"

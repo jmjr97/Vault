@@ -1,7 +1,8 @@
 -- ======================================================================
 -- Config: Hyprland
--- File: configs/hypr-rules.lua
--- Platform: main-rig
+-- File: ~/.config/hypr/configs/hypr-rules.lua
+-- Platform: desktop
+-- Link: https://github.com/hyprwm/Hyprland
 -- ======================================================================
 local extra_small_size = { '(monitor_w*0.4)', '(monitor_h*0.4)' }
 local smaller_size = { '(monitor_w*0.6)', '(monitor_h*0.6)' }

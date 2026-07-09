@@ -1,7 +1,9 @@
 // ======================================================================<D-A>
 // Config: Waybar
-// File: profiles/bar/config.jsonc
-// Platform: main-rig
+// File: ~/.config/waybar/config.jsonc
+// Desc: bar
+// Platform: desktop
+// Link: https://github.com/Alexays/Waybar
 // ======================================================================
 
 [{
@@ -146,7 +148,7 @@
 	},
   "custom/pacman": {
     "interval": 180,
-    "exec": "$HOME/Vault/scripts/env/hyprland/updates.sh",
+    "exec": "$HOME/Vault/scripts/hyprland/updates.sh",
 		"on-click": "~/Vault/my-apps/pac-updates/pac-updates",
     "on-click-right": "$HOME/Vault/scripts/env/hyprland/updates.sh",
     "format": "󰮯 <span foreground='#fab387'>{}</span>",

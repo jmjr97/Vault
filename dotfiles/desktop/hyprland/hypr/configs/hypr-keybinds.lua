@@ -1,7 +1,8 @@
 -- ======================================================================
 -- Config: Hyprland
--- File: configs/hypr-keybinds.lua
--- Platform: main-rig
+-- File: ~/.config/hypr/configs/hypr-keybinds.lua
+-- Platform: desktop
+-- Link: https://github.com/hyprwm/Hyprland
 -- ======================================================================
 
 local mod = 'SUPER'
@@ -11,7 +12,7 @@ local shft = '+ SHIFT'
 -- system --
 ------------
 hl.bind(mod .. ctrl .. ' + Q', hl.dsp.window.close())
-hl.bind(mod .. ctrl .. ' + Backspace', hl.dsp.exec_cmd('$HOME/Vault/scripts/reset-ui.sh'))
+hl.bind(mod .. ctrl .. ' + Backspace', hl.dsp.exec_cmd('$HOME/Vault/scripts/hyprland/reset-ui.sh'))
 
 -- plugins --
 -------------

@@ -1,7 +1,7 @@
 -- ======================================================================
 -- Config: Hyprland
--- File: modues/hyprbars.lua
--- Platform: archbox
+-- File: ~/.config/hypr/modues/hyprbars.lua
+-- Platform: desktop
 -- Link: https://github.com/hyprwm/hyprland-plugins/tree/main/hyprbars
 -- ======================================================================
 

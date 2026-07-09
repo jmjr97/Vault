@@ -1,7 +1,8 @@
 -- ======================================================================
 -- Config: Hyprland
--- File: hyprland.lua
--- Platform: main-rig
+-- File: ~/.config/hypr/hyprland.lua
+-- Platform: desktop
+-- Link: https://github.com/hyprwm/Hyprland
 -- ======================================================================
 
 require('configs.hypr-system')

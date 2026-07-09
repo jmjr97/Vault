@@ -1,7 +1,10 @@
 // ======================================================================
 // Config: Rofi
-// File: onfig.rasi
+// File: ~/.config/rofi/config.rasi
+// Platform: shared
+// Link: https://github.com/davatorium/rofi
 // ======================================================================
+
 
 @theme "/home/john/.config/rofi/themes/mytheme.rasi"
 

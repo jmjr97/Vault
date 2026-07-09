@@ -1,3 +1,11 @@
+/* ======================================================================
+// Config: Wlogout
+// File: ~/.config/wlogout/style.css
+// Platform: shared
+// Link: https://github.com/ArtsyMacaw/wlogout
+// ======================================================================*/
+
+
 * {
 	background-image: none;
 	box-shadow: none;
@@ -28,42 +36,41 @@ button:hover {
 }
 
 #lock {
-    background-image: image(url("img/lock.png"));
+	background-image: image(url("img/lock.png"));
 }
 
 #lock:hover {
-    background-image: image(url("img/lock_hover.png"));
+	background-image: image(url("img/lock_hover.png"));
 }
 
 #logout {
-    background-image: image(url("img/logout.png"));
+	background-image: image(url("img/logout.png"));
 }
 
 #logout:hover {
-    background-image: image(url("img/logout_hover.png"));
+	background-image: image(url("img/logout_hover.png"));
 }
 
 #suspend {
-    background-image: image(url("img/suspend.png"));
+	background-image: image(url("img/suspend.png"));
 }
 
 #suspend:hover {
-    background-image: image(url("img/suspend_hover.png"));
+	background-image: image(url("img/suspend_hover.png"));
 }
 
 #shutdown {
-    background-image: image(url("img/shutdown.png"));
+	background-image: image(url("img/shutdown.png"));
 }
 
 #shutdown:hover {
-    background-image: image(url("img/shutdown_hover.png"));
+	background-image: image(url("img/shutdown_hover.png"));
 }
 
 #reboot {
-    background-image: image(url("img/reboot.png"));
+	background-image: image(url("img/reboot.png"));
 }
 
 #reboot:hover {
-    background-image: image(url("img/reboot_hover.png"));
+	background-image: image(url("img/reboot_hover.png"));
 }
-

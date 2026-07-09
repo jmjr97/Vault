@@ -1,3 +1,10 @@
+/* ======================================================================
+   Config: Swaync 
+   File: ~/.config/swaync/style.css
+   Platform: shared 
+	 Link: https://github.com/ErikReider/SwayNotificationCenter
+   ====================================================================== */
+
 * {
 	all: unset;
 	font-size: 14px;

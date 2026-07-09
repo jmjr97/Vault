@@ -1,7 +1,8 @@
 -- ======================================================================
 -- Config: Hyprland
--- File: configs/hypr-startup.lua
--- Platform: main-rig
+-- File: ~/.config/hypr/configs/hypr-startup.lua
+-- Platform: desktop
+-- Link: https://github.com/hyprwm/Hyprland
 -- ======================================================================
 
 hl.on('hyprland.start', function()

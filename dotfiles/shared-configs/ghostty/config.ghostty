@@ -1,3 +1,10 @@
+# ======================================================================
+# Config: Ghostty
+# File: .config/ghostty/config.ghostty
+# Platform: shared
+# Link: https://github.com/ghostty-org/ghostty
+# ======================================================================
+
 gtk-single-instance = false
 
 theme = "Catppuccin Mocha"

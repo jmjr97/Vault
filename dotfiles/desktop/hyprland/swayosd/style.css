@@ -1,3 +1,10 @@
+/*======================================================================
+  Config: Swayosd
+  File: ~/.config/swayosd/style.css
+  Platform: shared
+# Link: https://github.com/ErikReider/SwayOSD
+  ======================================================================*/
+
 :root {
 	--background-color: #1e1e2e;
 	--border-color: #5b5b70;

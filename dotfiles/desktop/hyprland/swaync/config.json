@@ -5,7 +5,7 @@
   "positionY": "top",
   "layer": "overlay",
   "control-center-layer": "top",
-	"notification-window-preferred-output": "DP-1",
+  "notification-window-preferred-output": "DP-1",
   "layer-shell": true,
   "layer-shell-cover-screen": true,
   "cssPriority": "user",
@@ -54,9 +54,9 @@
     "inhibitors",
     "title",
     "dnd",
-		"buttons-grid",
+    "buttons-grid",
     "notifications",
-		"mpris"
+    "mpris"
   ],
   "widget-config": {
     "notifications": {
@@ -82,7 +82,7 @@
     "mpris": {
       "blacklist": [],
       "autohide": true,
-      "show-album-art": true,
+      "show-album-art": false,
       "loop-carousel": false
     },
     "buttons-grid": {
@@ -91,17 +91,17 @@
         {
           "label": "",
           "type": "button",
-          "command": "cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+          "command": "~/Vault/scripts/swaync.sh clipboard"
         },
         {
           "label": "",
           "type": "button",
-          "command": "~/.config/hypr/scripts/toggle_bars.sh"
+          "command": "~/Vault/scripts/swaync.sh toggle_bars"
         },
         {
           "label": "",
           "type": "button",
-          "command": "hyprpicker -a"
+          "command": "~/Vault/scripts/swaync.sh picker"
         },
         {
           "label": "󰽉",
