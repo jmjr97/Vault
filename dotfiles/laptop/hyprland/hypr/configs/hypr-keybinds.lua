@@ -21,6 +21,18 @@ hl.bind('SUPER + Q', function()
 	end
 end)
 
+local function get_bars()
+	return hl.get_config('plugin.hyprbars.enabled')
+end
+
+hl.bind(mod .. ' + T', function()
+	if get_bars() == true then
+		hl.config({ plugin = { hyprbars = { enabled = false } } })
+	else
+		hl.config({ plugin = { hyprbars = { enabled = true } } })
+	end
+end)
+
 -- applications --
 ------------------
 hl.bind(mod .. ' + Return', hl.dsp.exec_cmd('ghostty'))
@@ -40,38 +52,25 @@ hl.bind(mod .. ' + P', hl.dsp.exec_cmd('cliphist list | rofi -dmenu -p "Cliphist
 --------------------
 hl.bind(mod .. ' + A', function()
 	local width = hl.get_active_window().size.x
-	if hl.get_active_workspace().tiled_layout == 'scrolling' then
-		if width >= 1800 then
-			hl.dispatch(hl.dsp.layout('colresize 0.5'))
-		else
-			hl.dispatch(hl.dsp.layout('colresize 1.0'))
-		end
+	if width >= 1800 then
+		hl.dispatch(hl.dsp.layout('colresize 0.5'))
 	else
-		hl.dispatch(hl.dsp.window.fullscreen({ mode = 'maximized' }))
+		hl.dispatch(hl.dsp.layout('colresize 1.0'))
 	end
 end)
 
 hl.bind(mod .. ctrl .. ' + A', function()
-	if hl.get_active_workspace().tiled_layout == 'scrolling' then
-		local width = hl.get_active_window().size.x
-		if width >= 1800 then
-			hl.dispatch(hl.dsp.layout('colresize all 0.5'))
-		else
-			hl.dispatch(hl.dsp.layout('colresize all 1.0'))
-		end
-	end
-end)
-
-hl.bind(mod .. ' + S', function()
-	if hl.get_active_workspace().tiled_layout == 'scrolling' then
+	local width = hl.get_active_window().size.x
+	if width >= 1800 then
 		hl.dispatch(hl.dsp.layout('colresize all 0.5'))
+	else
+		hl.dispatch(hl.dsp.layout('colresize all 1.0'))
 	end
 end)
 
--- hl.bind(mod .. ' + A', hl.dsp.window.fullscreen({ mode = 'maximized' }))
 hl.bind(mod .. ' + F', hl.dsp.window.fullscreen({ 'toggle' }))
 hl.bind(mod .. ctrl .. ' + D', hl.dsp.window.cycle_next({}))
-hl.bind(mod .. ' + D', function()
+hl.bind(mod .. ' + S', function()
 	hl.dispatch(hl.dsp.window.float({ action = 'toggle' }))
 	if hl.get_active_window().floating == true and hl.get_active_window().tags == '' then
 		hl.dispatch(hl.dsp.window.resize({ x = 1344, y = 756 }))
@@ -88,126 +87,31 @@ end
 
 hl.bind(mod .. ' + Apostrophe', hl.dsp.workspace.toggle_special('scratchpad'))
 
--- layouts --
--------------
-local function get_layout()
-	local current = hl.get_active_workspace().tiled_layout
-	return current
-end
-
-local function swap_layout()
-	if get_layout() == 'master' then
-		hl.dispatch(hl.dsp.exec_cmd('notify-send -t 1000 -h int:transient:1 "Layout: Scrolling"'))
-		hl.config({ general = { layout = 'scrolling' } })
-	else
-		hl.dispatch(hl.dsp.exec_cmd('notify-send -t 1000 -h int:transient:1 "Layout: Master"'))
-		hl.config({ general = { layout = 'master' } })
-	end
-end
-
-hl.bind(mod .. ' + Y', function()
-	swap_layout()
-end)
-
--- title bars --
-local function get_bars()
-	return hl.get_config('plugin.hyprbars.enabled')
-end
-
-hl.bind(mod .. ' + T', function()
-	if get_bars() == true then
-		hl.config({ plugin = { hyprbars = { enabled = false } } })
-	else
-		hl.config({ plugin = { hyprbars = { enabled = true } } })
-	end
-end)
-
 -- move focus --
-hl.bind(mod .. ' + H', function()
-	if get_layout() == 'master' then
-		hl.dispatch(hl.dsp.focus({ direction = 'left' }))
-	elseif get_layout() == 'scrolling' then
-		hl.dispatch(hl.dsp.layout('focus l'))
-	end
-end)
-
-hl.bind(mod .. ' + L', function()
-	if get_layout() == 'master' then
-		hl.dispatch(hl.dsp.focus({ direction = 'right' }))
-	elseif get_layout() == 'scrolling' then
-		hl.dispatch(hl.dsp.layout('focus r'))
-	end
-end)
-
+hl.bind(mod .. ' + H', hl.dsp.layout('focus l'))
+hl.bind(mod .. ' + L', hl.dsp.layout('focus r'))
 hl.bind(mod .. ' + J', hl.dsp.focus({ direction = 'down' }))
 hl.bind(mod .. ' + K', hl.dsp.focus({ direction = 'up' }))
 
 -- move window --
-hl.bind(mod .. ctrl .. ' + H', function()
-	if get_layout() == 'master' then
-		hl.dispatch(hl.dsp.window.move({ direction = 'left' }))
-	elseif get_layout() == 'scrolling' then
-		hl.dispatch(hl.dsp.layout('swapcol l'))
-	end
-end)
-
-hl.bind(mod .. ctrl .. ' + L', function()
-	if get_layout() == 'master' then
-		hl.dispatch(hl.dsp.window.move({ direction = 'right' }))
-	elseif get_layout() == 'scrolling' then
-		hl.dispatch(hl.dsp.layout('swapcol r'))
-	end
-end)
-
+hl.bind(mod .. ctrl .. ' + H', hl.dsp.layout('swapcol l'))
+hl.bind(mod .. ctrl .. ' + L', hl.dsp.layout('swapcol r'))
 hl.bind(mod .. ctrl .. ' + J', hl.dsp.window.move({ direction = 'down' }))
 hl.bind(mod .. ctrl .. ' + K', hl.dsp.window.move({ direction = 'up' }))
 
 -- scrolling: create or split columns
-hl.bind(mod .. ' + Comma', function()
-	if get_layout() == 'scrolling' then
-		hl.dispatch(hl.dsp.layout('consume_or_expel prev'))
-	end
-end)
-
-hl.bind(mod .. ' + Period', function()
-	if get_layout() == 'scrolling' then
-		hl.dispatch(hl.dsp.layout('consume_or_expel next'))
-	end
-end)
+hl.bind(mod .. ' + Comma', hl.dsp.layout('consume_or_expel prev'))
+hl.bind(mod .. ' + Period', hl.dsp.layout('consume_or_expel next'))
 
 -- master: resize windows
-hl.bind(mod .. shft .. ' + H', function()
-	if get_layout() == 'master' then
-		hl.dispatch(hl.dsp.window.resize({ x = -50, y = 0, relative = true }))
-	else
-		hl.dispatch(hl.dsp.layout('colresize -conf'))
-	end
-end)
-
-hl.bind(mod .. shft .. ' + L', function()
-	if get_layout() == 'master' then
-		hl.dispatch(hl.dsp.window.resize({ x = 50, y = 0, relative = true }))
-	else
-		hl.dispatch(hl.dsp.layout('colresize +conf'))
-	end
-end)
-
-hl.bind(mod .. shft .. ' + K', function()
-	if get_layout() == 'master' then
-		hl.dispatch(hl.dsp.window.resize({ x = 0, y = 50, relative = true }))
-	end
-end)
-
-hl.bind(mod .. shft .. ' + J', function()
-	if get_layout() == 'master' then
-		hl.dispatch(hl.dsp.window.resize({ x = 0, y = -50, relative = true }))
-	end
-end)
+hl.bind(mod .. shft .. ' + H', hl.dsp.layout('colresize -conf'))
+hl.bind(mod .. shft .. ' + L', hl.dsp.layout('colresize +conf'))
 
 -- mouse --
 -----------
 hl.bind(mod .. ' + mouse:272', hl.dsp.window.drag(), { mouse = true })
 hl.bind(mod .. ' + mouse:273', hl.dsp.window.resize(), { mouse = true })
+
 hl.bind(mod .. ' + mouse_down', hl.dsp.focus({ workspace = 'e+1' }))
 hl.bind(mod .. ' + mouse_up', hl.dsp.focus({ workspace = 'e-1' }))
 
