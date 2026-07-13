@@ -4,6 +4,8 @@
 # File: scripts/git.sh
 # ======================================================================
 
+echo -e "\nGit setup:"
+
 if [ ! -f ~/.gitconfig ]; then
 	git config --global user.name 'John Majka Jr'
 	git config --global user.email 'jmjr97@gmail.com'

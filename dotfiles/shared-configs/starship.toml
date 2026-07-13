@@ -5,6 +5,12 @@
 # Link: https://github.com/starship/starship
 # ======================================================================
 
+# colors used:
+# blue: #89b4fa
+# red: #f38ba8
+# yellow: #fab387
+# purple: #cab6f7
+
 format = """
 $jobs\
 $hostname\
@@ -34,11 +40,11 @@ truncation_symbol = '…/'
 [character]
 success_symbol = '[❯](#89b4fa)'
 error_symbol = '[❯](#f38ba8)'
-vimcmd_symbol = '[❮](#f9e2af)'
+vimcmd_symbol = '[❮](#fab387)'
 
 [git_branch]
 format = ' [$symbol $branch]($style) '
-style = '#cba6f7'
+style = '#cab6f7'
 symbol = '󰊢'
 # symbol = ''
 
@@ -59,7 +65,7 @@ style = 'bright-black'
 
 [cmd_duration]
 format = ' [$duration]($style) '
-style = '#f9e2af'
+style = '#fab387'
 
 [python]
 format = '[$virtualenv]($style) '

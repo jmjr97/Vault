@@ -1,11 +1,23 @@
+// tokyonight theme
 * {
-		background:     #1e1e2e77;
-		background2:    #1e1e2e;
-    background-alt: #45475a;
-    foreground:     #cdd6f4;
-    selected:       #89b4fa;
-    active:         #fab387;
-    urgent:         #f38ba8;
-    border:         #45475a;
+		background:     #1a1b2677;
+		background2:    #1a1b26;
+    background-alt: #32344a;
+    foreground:     #a9b1d6;
+    selected:       #7aa2f7;
+    active:         #e0af68;
+    urgent:         #f7768e;
+    border:         #444b6a;
 }
 
+// catppuccin theme
+// * {
+// 		background:     #1e1e2e77;
+// 		background2:    #1e1e2e;
+//     background-alt: #45475a;
+//     foreground:     #cdd6f4;
+//     selected:       #89b4fa;
+//     active:         #fab387;
+//     urgent:         #f38ba8;
+//     border:         #45475a;
+// }

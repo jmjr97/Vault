@@ -38,7 +38,10 @@ sudo pacman -Syu
 ./scripts/git.sh
 
 # install packages
-./scripts/packages.sh
+./scripts/packages-apps.sh
+./scripts/packages-fonts.sh
+./scripts/packages-hypr.sh
+./scripts/packages-utility.sh
 
 # system_specific
 
@@ -47,6 +50,9 @@ sudo pacman -Syu
 
 # symlinks
 ./scripts/symlinks.sh
+
+# hyprland plugins
+./scripts/hypr-plugins.sh
 
 # misc
 ./scripts/misc.sh

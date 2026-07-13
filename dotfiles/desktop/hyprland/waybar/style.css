@@ -3,9 +3,18 @@
  * File: ~/.config/waybar/style.css
  * Desc: bar
  * Platform: desktop
-// Link: https://github.com/Alexays/Waybar
- *=====================================================================
+ * Link: https://github.com/Alexays/Waybar
+ *=====================================================================*/
+
+/* colors in use: 
+ * background: rgba(26, 27, 38, 0.6)
+ * black: #45475a
+ * white: #cdd6f4
+ * main: #89b4fa
+ * info: #fab387
+ * warning: #f38ba8
 */
+
 * {
 	font-family: Firacode Nerd Font Propo, Helvetica, Arial, sans-serif;
 	font-size: 16px;
@@ -28,7 +37,7 @@ tooltip {
 
 #workspaces button {
 	padding: 3px;
-	color: #5b5b70;
+	color: #45475a;
 	border-radius: 0;
 }
 
@@ -83,10 +92,18 @@ tooltip {
 	/* margin: 0 10px; */
 }
 
-#clock,
-#custom-scroll-left,
-#custom-scroll-right,
+#clock {
+	color: #fab387;
+	margin: 0 10px;
+}
+
 #custom-weather {
+	color: #fab387;
+	margin: 0 10px;
+}
+
+#custom-scroll-left,
+#custom-scroll-right {
 	color: #89b4fa;
 	margin: 0 10px;
 }

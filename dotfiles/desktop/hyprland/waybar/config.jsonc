@@ -78,15 +78,15 @@
   },
   "clock": {
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "format": "{:%a, %b %d - <span color='#fab387'>%I:%M</span>}",
+    "format": "{:%a, %b %d - %I:%M}",
 		"calendar": {
 			"mode": "month",
 			"mode-mon-col": 3,
 			"format": {
 				"months": "<span size='20pt' color='#89b4fa'><b>{}</b></span>",
-				"days": "<span size='18pt' color='#bac2de'><b>{}</b></span>",
+				"days": "<span size='18pt' color='#cdd6f4'><b>{}</b></span>",
 				"weeks": "<span color='#a6e3a1'><b>{}</b></span>",
-				"weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+				"weekdays": "<span color='#fab387'><b>{}</b></span>",
 				"today": "<span color='#f38ba8'><b><u>{}</u></b></span>"
 			}
 		},
@@ -287,9 +287,9 @@
 			"mode-mon-col": 3,
 			"format": {
 				"months": "<span size='20pt' color='#89b4fa'><b>{}</b></span>",
-				"days": "<span size='18pt' color='#bac2de'><b>{}</b></span>",
+				"days": "<span size='18pt' color='#cdd6f4'><b>{}</b></span>",
 				"weeks": "<span color='#a6e3a1'><b>{}</b></span>",
-				"weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+				"weekdays": "<span color='#fab387'><b>{}</b></span>",
 				"today": "<span color='#f38ba8'><b><u>{}</u></b></span>"
 			}
 		},
@@ -349,14 +349,17 @@
   },
   "disk": {
     "format": "󰋊 <span foreground='#fab387'>{percentage_used}%</span>",
-    "path": "/"
+    "path": "/",
+		"tooltip-format": "Root: {free} free"
     },
   "disk#games": {
     "format": " <span foreground='#fab387'>{percentage_used}%</span>",
-    "path": "/run/media/Games/"
+    "path": "/run/media/Games/",
+		"tooltip-format": "Games: {free} free"
     },
   "disk#storage": {
     "format": " <span foreground='#fab387'>{percentage_used}%</span>",
-    "path": "/run/media/Storage/"
+    "path": "/run/media/Storage/",
+		"tooltip-format": "Storage: {free} free"
     }
 }]

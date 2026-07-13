@@ -5,6 +5,15 @@
 	 Link: https://github.com/ErikReider/SwayNotificationCenter
    ====================================================================== */
 
+:root {
+	--background: #1e1e2e77;
+	--foreground: #cdd6f4;
+	--black: #45475a;
+	--blue: #89b4fa;
+	--red: #f38ba8;
+	--red-bright: #f38ba8;
+}
+
 * {
 	all: unset;
 	font-size: 14px;
@@ -13,7 +22,7 @@
 }
 
 trough highlight {
-	background: #cdd6f4;
+	background: var(--foreground);
 }
 
 scale {
@@ -32,24 +41,24 @@ trough slider {
 	border-radius: 12.6px;
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
 	transition: all 0.2s ease;
-	background-color: #89b4fa;
+	background-color: var(--blue);
 }
 
 trough slider:hover {
-	box-shadow: 0 0 2px rgba(0, 0, 0, 0.8), 0 0 8px #89b4fa;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.8), 0 0 8px var(--blue);
 }
 
 trough {
-	background-color: #5b5b70;
+	background-color: var(--black);
 }
 
 /* notifications */
 .notification-background {
-	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8), inset 0 0 0 1px #45475a;
+	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8), inset 0 0 0 1px var(--black);
 	border-radius: 12.6px;
 	margin: 18px;
-	background: #1e1e2e55;
-	color: #cdd6f4;
+	background: var(--black);
+	color: var(--foreground);
 	padding: 0;
 }
 
@@ -59,7 +68,7 @@ trough {
 }
 
 .notification-background .notification.critical {
-	box-shadow: inset 0 0 7px 0 #f38ba8;
+	box-shadow: inset 0 0 7px 0 var(--red);
 }
 
 .notification .notification-content {
@@ -72,7 +81,7 @@ trough {
 }
 
 .notification-content .summary {
-	color: #cdd6f4;
+	color: var(--foreground);
 }
 
 .notification-content .time {
@@ -92,21 +101,21 @@ trough {
 	padding: 2px;
 	border-radius: 6.3px;
 	color: #24273a;
-	background-color: #f38ba8;
+	background-color: var(--red);
 }
 
 .notification-background .close-button:hover {
-	background-color: #ee99a0;
+	background-color: var(--red-bright);
 }
 
 .notification-background .close-button:active {
-	background-color: #f5bde6;
+	background-color: var(--red-bright);
 }
 
 .notification .notification-action {
 	border-radius: 7px;
-	color: #cdd6f4;
-	box-shadow: inset 0 0 0 1px #45475a;
+	color: var(--foreground);
+	box-shadow: inset 0 0 0 1px var(--black);
 	margin: 4px;
 	padding: 8px;
 	font-size: 0.2rem;
@@ -114,24 +123,24 @@ trough {
 }
 
 .notification .notification-action {
-	background-color: #5b5b70;
+	background-color: var(--black);
 }
 
 .notification .notification-action:hover {
-	background-color: #45475a;
+	background-color: var(--black);
 }
 
 .notification .notification-action:active {
-	background-color: #5b5b70;
+	background-color: var(--black);
 }
 
 .notification.critical progress {
-	background-color: #f38ba8;
+	background-color: var(--red);
 }
 
 .notification.low progress,
 .notification.normal progress {
-	background-color: #89b4fa;
+	background-color: var(--blue);
 }
 
 .notification progress,
@@ -143,16 +152,16 @@ trough {
 
 /* control center */
 .control-center {
-	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8), inset 0 0 0 1px #5b5b70;
+	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8), inset 0 0 0 1px var(--black);
 	border-radius: 12.6px;
 	background-color: #24273a55;
-	color: #cdd6f4;
+	color: var(--foreground);
 	padding: 12px 14px;
 }
 
 .control-center .notification-background {
 	border-radius: 7px;
-	box-shadow: inset 0 0 0 1px #45475a;
+	box-shadow: inset 0 0 0 1px var(--black);
 	margin: 4px 10px;
 	overflow: hidden;
 }
@@ -166,24 +175,24 @@ trough {
 }
 
 .control-center .widget-title>label {
-	color: #cdd6f4;
+	color: var(--foreground);
 	font-size: 1.3em;
 }
 
 .control-center .widget-title button {
 	border-radius: 7px;
-	color: #cdd6f4;
-	background-color: #5b5b70;
-	box-shadow: inset 0 0 0 1px #45475a;
+	color: var(--foreground);
+	background-color: var(--black);
+	box-shadow: inset 0 0 0 1px var(--black);
 	padding: 8px;
 }
 
 .control-center .widget-title button:hover {
-	background-color: #45475a;
+	background-color: var(--black);
 }
 
 .control-center .widget-title button:active {
-	background-color: #5b5b70;
+	background-color: var(--black);
 }
 
 .control-center .notification-group {
@@ -191,7 +200,7 @@ trough {
 }
 
 .control-center .notification-group:focus .notification-background {
-	background-color: #5b5b70;
+	background-color: var(--black);
 }
 
 scrollbar slider {
@@ -213,29 +222,29 @@ scrollbar trough {
 .widget-dnd>switch {
 	font-size: initial;
 	border-radius: 8px;
-	background: #5b5b70;
+	background: var(--black);
 	box-shadow: none;
 }
 
 .widget-dnd>switch:checked {
-	background: #89b4fa;
+	background: var(--blue);
 }
 
 .widget-dnd>switch slider {
-	background: #45475a;
+	background: var(--black);
 	border-radius: 8px;
 }
 
 /* mpris */
 .widget-mpris-player {
-	background: #5b5b70;
+	background: var(--black);
 	border-radius: 12.6px;
-	color: #cdd6f4;
+	color: var(--foreground);
 	margin: 6px 0;
 }
 
 .mpris-overlay {
-	background-color: #5b5b70;
+	background-color: var(--black);
 	opacity: 0.9;
 	padding: 15px 10px;
 }
@@ -248,7 +257,7 @@ scrollbar trough {
 
 .widget-mpris-title {
 	font-size: 1.2rem;
-	color: #cdd6f4;
+	color: var(--foreground);
 }
 
 .widget-mpris-subtitle {
@@ -258,7 +267,7 @@ scrollbar trough {
 
 .widget-mpris button {
 	border-radius: 12.6px;
-	color: #cdd6f4;
+	color: var(--foreground);
 	margin: 0 5px;
 	padding: 2px;
 }
@@ -268,11 +277,11 @@ scrollbar trough {
 }
 
 .widget-mpris button:hover {
-	background-color: #5b5b70;
+	background-color: var(--black);
 }
 
 .widget-mpris button:active {
-	background-color: #45475a;
+	background-color: var(--black);
 }
 
 .widget-mpris button:disabled {
@@ -285,23 +294,23 @@ scrollbar trough {
 }
 
 .widget-menubar>box>.menu-button-bar> :last-child {
-	color: #f38ba8;
+	color: var(--red);
 }
 
 .power-buttons button:hover,
 .powermode-buttons button:hover,
 .screenshot-buttons button:hover {
-	background: #5b5b70;
+	background: var(--black);
 }
 
 .control-center .widget-label>label {
-	color: #cdd6f4;
+	color: var(--foreground);
 	font-size: 2rem;
 }
 
 .widget-buttons-grid {
-	background-color: #1e1e2e;
-	border: 1px solid #5b5b70;
+	background-color: var(--background);
+	border: 1px solid var(--black);
 	border-radius: 8px;
 	margin: 6px 0;
 	padding: 6px 0;
@@ -309,15 +318,15 @@ scrollbar trough {
 
 .widget-buttons-grid>flowbox>flowboxchild>button label {
 	font-size: 28px;
-	color: #cdd6f4;
+	color: var(--foreground);
 	border-radius: 8px;
 	margin: 0 10px;
 	padding: 2px 8px;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button label:hover {
-	color: #89b4fa;
-	/* background-color: #89b4fa; */
+	color: var(--blue);
+	/* background-color: var(--blue); */
 }
 
 .widget-volume {

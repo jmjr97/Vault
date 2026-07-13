@@ -6,7 +6,7 @@
 // ======================================================================
 
 
-@theme "/home/john/.config/rofi/themes/mytheme.rasi"
+//@theme "/home/john/.config/rofi/themes/mytheme.rasi"
 
 configuration {
 	// remove needed binds
@@ -20,3 +20,5 @@ configuration {
 	kb-row-up: "Up,Control+k";
 	kb-row-down: "Down,Control+j";
 }
+
+@theme "/home/john/.config/rofi/themes/my-theme.rasi"
