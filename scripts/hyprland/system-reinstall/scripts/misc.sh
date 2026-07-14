@@ -5,11 +5,11 @@
 # ======================================================================
 
 if [ ! -d ~/.local/share/icons/ ]; then
-	mkdir -p ~/.local/share/icons/
+	mkdir -p "~/.local/share/icons/"
 fi
 
-cp -r ~/.themes/catppuccin-macchiato-dark-cursors/ ~/.local/share/icons/
-cp -r ~/.themes/Vortex-Dark-Icons/ ~/.local/share/icons/
+cp -r ~/.themes/catppuccin-macchiato-dark-cursors/ "~/.local/share/icons/"
+cp -r ~/.themes/Vortex-Dark-Icons/ "~/.local/share/icons/"
 
 # keyd
 if ! pacman -Qi keyd >& /dev/null; then

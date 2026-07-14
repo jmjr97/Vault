@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-killall .waybar-wrapped
+killall waybar
 killall hyprpaper
 # killall swaync
 # killall swayosd-server

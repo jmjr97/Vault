@@ -5,8 +5,7 @@
 # ======================================================================
 
 fonts=(
-	ttf-firacode-nerd
-	ttf-jetbrains-mono-nerd
+	ttf-0xproto-nerd
 	noto-fonts
 	noto-fonts-cjk
 	noto-fonts-emoji

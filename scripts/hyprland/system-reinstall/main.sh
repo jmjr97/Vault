@@ -25,6 +25,10 @@ if ! pacman -Qi reflector >& /dev/null; then
 	sudo pacman -S reflector --needed --noconfirm
 fi
 
+if ! pacman -Qi gum >& /dev/null; then
+	sudo pacman -S gum --needed --noconfirm
+fi
+
 ####################
 ## update mirrors ##
 ####################
@@ -50,9 +54,6 @@ sudo pacman -Syu
 
 # symlinks
 ./scripts/symlinks.sh
-
-# hyprland plugins
-./scripts/hypr-plugins.sh
 
 # misc
 ./scripts/misc.sh

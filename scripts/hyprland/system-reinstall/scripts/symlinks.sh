@@ -7,7 +7,7 @@
 ln -s ~/Vault/dotfiles/.themes/ ~/
 
 # shared-configs to .config
-shared=(aseprite bat btop fastfetch fish ghostty GIMP lazygit nvim nwg-look rofi satty wlogout yazi)
+shared=(bat btop fastfetch fish ghostty GIMP lazygit nvim nwg-look rofi satty wlogout yazi)
 
 for item in "${shared[@]}"; do
 	if [[ ! -L ~/.config/$item ]]; then
