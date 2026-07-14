@@ -16,20 +16,15 @@ hl.bind(mod .. ctrl .. ' + Backspace', hl.dsp.exec_cmd('$HOME/Vault/scripts/hypr
 
 -- plugins --
 -------------
--- overview
+-- overview --
 hl.bind('SUPER + Q', function()
 	if hl.plugin and hl.plugin.scrolloverview then
 		hl.plugin.scrolloverview.overview('toggle')
 	end
 end)
 
--- title bars
--- local function get_bars()
--- 	return hl.get_config('plugin.hyprbars.enabled')
--- end
-
+-- title bars --
 hl.bind(mod .. ' + T', function()
-	-- if get_bars() == true then
 	if hl.plugin and hl.plugin.hyprbars then
 		hl.config({ plugin = { hyprbars = { enabled = false } } })
 	else

@@ -18,7 +18,7 @@ bell-features = system
 notify-on-command-finish = unfocused
 notify-on-command-finish-action = bell, notify
 
-font-family = "FiraCode Nerd Font"
+font-family = "0xProto Nerd Font Mono"
 font-size = 14
 
 window-height = 36

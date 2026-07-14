@@ -39,6 +39,7 @@ if status is-interactive
 	alias orn='nvim ~/Dropbox/obsidian/notes/_random.md'
 
 	# apps
+	alias cat='bat'
 	alias f='yazi'
 	alias ff='fastfetch'
 	alias top='btop'
