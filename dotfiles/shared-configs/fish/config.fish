@@ -21,15 +21,19 @@ if status is-interactive
 	alias ..='cd ..'
 	alias rd='z -'
 
+	# nixos
+	alias ne='sudoedit /etc/nixos/configuration.nix'
+	abbr nrb sudo nixos-rebuild switch
+
 	# pacman
-	abbr pi sudo pacman -S --needed
-	abbr pr sudo pacman -Rns
-	abbr pu sudo pacman -Syu
-	abbr ps pacman -Ss
-	abbr pq pacman -Qs
-	abbr pqe pacman -Qe
-	abbr pc checkupdates
-	abbr pro 'sudo pacman -Rns $(pacman -Qdtq)'
+	# abbr pi sudo pacman -S --needed
+	# abbr pr sudo pacman -Rns
+	# abbr pu sudo pacman -Syu
+	# abbr ps pacman -Ss
+	# abbr pq pacman -Qs
+	# abbr pqe pacman -Qe
+	# abbr pc checkupdates
+	# abbr pro 'sudo pacman -Rns $(pacman -Qdtq)'
 
 	# neovim
 	alias vim='nvim'

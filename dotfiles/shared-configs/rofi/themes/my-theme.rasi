@@ -6,12 +6,12 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun,calc,run,recursivebrowser";
+	modi:                       "drun,run,recursivebrowser";
 	show-icons:                 false;
 	display-drun:               "Run:";
 	display-run:                "Cmd:";
 	display-recursivebrowser:        "Files:";
-	display-calc:								"Calc:";
+	// display-calc:								"Calc:";
 	drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
 	window-format:              "{w} · {c} · {t}";
 }
