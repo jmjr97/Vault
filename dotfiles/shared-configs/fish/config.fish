@@ -1,5 +1,5 @@
 # ======================================================================
-# Config: Fish
+# Config: fish
 # File: .config/fish/config.fish
 # Platform: shared
 # Link: https://github.com/fish-shell/fish-shell

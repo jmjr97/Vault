@@ -1,3 +1,10 @@
+# ======================================================================
+# Config: spotify-player
+# File: ~/.config/spotify-player/theme.toml
+# Platform: desktop
+# Link: https://github.com/aome510/spotify-player
+# ======================================================================
+
 [[themes]]
 name = "Catppuccin-latte"
 [themes.palette]

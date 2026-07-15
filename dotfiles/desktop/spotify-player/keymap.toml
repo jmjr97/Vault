@@ -1,3 +1,10 @@
+# ======================================================================
+# Config: spotify-player
+# File: ~/.config/spotify-player/keymap.toml
+# Platform: desktop
+# Link: https://github.com/aome510/spotify-player
+# ======================================================================
+
 [[keymaps]]
 command = "Quit"
 key_sequence = "q"

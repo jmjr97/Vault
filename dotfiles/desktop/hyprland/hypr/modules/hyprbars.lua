@@ -1,5 +1,5 @@
 -- ======================================================================
--- Config: Hyprland
+-- Config: hyprland
 -- File: ~/.config/hypr/modues/hyprbars.lua
 -- Platform: desktop
 -- Link: https://github.com/hyprwm/hyprland-plugins/tree/main/hyprbars

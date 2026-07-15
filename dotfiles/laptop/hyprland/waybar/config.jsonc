@@ -1,7 +1,9 @@
 // ======================================================================
-// Config: Waybar
-// File: profiles/bars/config.jsonc
-// Platform: archbook
+// Config: waybar
+// File: ~/.config/waybar/config.jsonc
+// Desc: bar
+// Platform: laptop
+// Link: https://github.com/Alexays/Waybar
 // ======================================================================
 
 {

@@ -1,5 +1,5 @@
 -- ======================================================================
--- Config: Hyprland
+-- Config: hyprland
 -- File: ~/.config/hypr/modues/overview.lua
 -- Platform: desktop
 -- Link: https://github.com/yayuuu/hyprland-scroll-overview

@@ -1,7 +1,7 @@
 -- ======================================================================
--- Config: Hyprland
+-- Config: hyprland
 -- File: modues/overview.lua
--- Platform: main-rig
+-- Platform: laptop
 -- Link: https://github.com/yayuuu/hyprland-scroll-overview
 -- ======================================================================
 

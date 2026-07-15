@@ -1,7 +1,8 @@
 -- ======================================================================
--- Config: Hyprland
--- File: hyprland.lua
--- Platform: archbook
+-- Config: hyprland
+-- File: ~/.config/hypr/hyprland.lua
+-- Platform: laptop
+-- Link: https://github.com/hyprwm/Hyprland
 -- ======================================================================
 
 require('configs.hypr-system')

@@ -1,5 +1,5 @@
 -- ======================================================================
--- Config: Hyprland
+-- Config: hyprland
 -- File: ~/.config/hypr/configs/hypr-system.lua
 -- Platform: desktop
 -- Link: https://github.com/hyprwm/Hyprland

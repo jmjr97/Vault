@@ -1,7 +1,7 @@
 -- ======================================================================
--- Config: Hyprland
+-- Config: hyprland
 -- File: modues/hyprbars.lua
--- Platform: main-rig
+-- Platform: laptop
 -- Link: https://github.com/hyprwm/hyprland-plugins/tree/main/hyprbars
 -- ======================================================================
 

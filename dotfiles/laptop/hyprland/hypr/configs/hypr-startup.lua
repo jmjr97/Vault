@@ -1,7 +1,8 @@
 -- ======================================================================
--- Config: Hyprland
+-- Config: hyprland
 -- File: configs/hypr-startup.lua
--- Platform: archbook
+-- Platform: laptop
+-- Link: https://github.com/hyprwm/Hyprland
 -- ======================================================================
 
 hl.on('hyprland.start', function()

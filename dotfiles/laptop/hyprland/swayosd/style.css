@@ -1,3 +1,11 @@
+/* ======================================================================
+  Config: swayosd
+  File: ~/.config/swayosd/config.toml
+  Platform: laptop
+  Link: https://github.com/ErikReider/SwayOSD
+  ====================================================================== */
+
+
 :root {
 	--background-color: #24273a;
 	--border-color: #45475a;

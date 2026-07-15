@@ -1,5 +1,5 @@
 -- ======================================================================
--- Config: Hyprland
+-- Config: hyprland
 -- File: ~/.config/hypr/configs/hypr-keybinds.lua
 -- Platform: desktop
 -- Link: https://github.com/hyprwm/Hyprland

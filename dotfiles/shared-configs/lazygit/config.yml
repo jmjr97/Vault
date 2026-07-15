@@ -1,6 +1,8 @@
 # ======================================================================
-# Config: Lazygit
-# File: config.yml
+# Config: lazygit
+# File: ~/.config/lazygit/config.yml
+# Platform: shared
+# Link: https://github.com/jesseduffield/lazygit
 # ======================================================================
 
 theme:

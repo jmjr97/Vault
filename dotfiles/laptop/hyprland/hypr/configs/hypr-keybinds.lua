@@ -1,7 +1,8 @@
 -- ======================================================================
--- Config: Hyprland
+-- Config: hyprland
 -- File: configs/hypr-keybinds.lua
--- Platform: main-rig
+-- Platform: laptop
+-- Link: https://github.com/hyprwm/Hyprland
 -- ======================================================================
 
 local mod = 'SUPER'

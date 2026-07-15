@@ -1,10 +1,10 @@
 /* ======================================================================
  * Config: Waybar
- * File: profiles/bar/style.css
- * Desc: bar layout
+ * File: ~/.config/waybar/style.css
+ * Desc: bar
  * Platform: laptop
- *=====================================================================
-*/
+ * Link: https://github.com/Alexays/Waybar
+ * ====================================================================== */
 
 * {
 	/* `otf-font-awesome` is required to be installed for icons */

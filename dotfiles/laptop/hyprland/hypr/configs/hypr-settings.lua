@@ -1,7 +1,8 @@
 -- ======================================================================
--- Config: Hyprland
+-- Config: hyprland
 -- File: configs/hypr-settings.lua
--- Platform: main-rig
+-- Platform: laptop
+-- Link: https://github.com/hyprwm/Hyprland
 -- ======================================================================
 
 -- workspace layout
