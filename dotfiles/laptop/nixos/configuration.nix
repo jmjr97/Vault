@@ -1,142 +1,165 @@
 { config, lib, pkgs, ... }:
 
+let 
+	home-manager = builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-26.05.tar.gz;
+in
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
-	
-	# -- Boot ----------------------------------------------------------------
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+		(import "${home-manager}/nixos")
+  ];
+
+	home-manager.useUserPackages = true;
+	home-manager.useGlobalPkgs = true;
+	home-manager.backupFileExtension = "backup";
+	home-manager.users.john = import ./home.nix;
+
+  # -- Boot ----------------------------------------------------------------
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-	# -- Network -------------------------------------------------------------
+  # -- Network -------------------------------------------------------------
   networking.hostName = "nixbook"; # Define your hostname.
-  networking.networkmanager.enable = true;
-	networking.wireless.enable = true;
+  networking.wireless.iwd.enable = true;
 
-	# -- Bluetooth -----------------------------------------------------------
-	hardware.bluetooth.enable = true;
-	hardware.bluetooth.powerOnBoot = true;
+  # -- Bluetooth -----------------------------------------------------------
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
 
-	# -- System --------------------------------------------------------------
+  # -- System --------------------------------------------------------------
   time.timeZone = "America/New_York";
-	nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;
+	users.defaultUserShell = pkgs.fish;
 
-	# -- User ----------------------------------------------------------------
+  # -- User ----------------------------------------------------------------
   users.users.john = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
-		shell = pkgs.fish;
     packages = with pkgs; [
       tree
     ];
   };
 
-  # programs.firefox.enable = true;
-	programs.hyprland = {
-		enable = true;
-		xwayland.enable = true;
-		withUWSM = true;
-	};
-	programs.fish.enable = true;
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+    withUWSM = true;
+  };
+  programs.fish.enable = true;
 
-	# -- Packages ------------------------------------------------------------
+  # -- Packages ------------------------------------------------------------
   environment.systemPackages = with pkgs; [
-		# System
-		git
+    # System
+    impala
+    git
     wget
-		keyd
-		bluez
-		zip
-		unzip
-		libappindicator
-		bat
-		btop
-		killall
+    keyd
+    bluez
+    zip
+    unzip
+    libappindicator
+    bat
+    btop
+    killall
+    udisks2
+		pavucontrol
 
-		# Desktop
-		swaynotificationcenter
-		waybar
-		hyprlock
-		hypridle
-		hyprpaper
-		hyprpicker
-		rofi
-		wlogout
+    # Desktop
+    swaynotificationcenter
+    waybar
+    hyprlock
+    hypridle
+    hyprpaper
+    hyprpicker
+    rofi
+    wlogout
 
-		# Terminal
-		ghostty
-		fish
-		starship
-		zoxide
-		eza
-		fzf
-		yazi
+    # Terminal
+    ghostty
+    fish
+    starship
+    zoxide
+    eza
+    fzf
+    yazi
+    fastfetch
 
-		# Applications
-		firefox
-		dropbox
-		bluetui
-		lazygit
+    # Applications
+    kdePackages.dolphin
+    firefox
+    dropbox
+    bluetui
+    lazygit
 
-		# Development
+    # Development
     vim
-		neovim
-		uv
-		gcc
-		
-		# Languages
-		python3
-		go
-		nodejs
+    neovim
+    uv
+    gcc
+    cargo
+
+    # Languages
+    python3
+    lua
+    go
+    nodejs
+
+    # Themes
+		nwg-look
   ];
 
-	fonts.packages = with pkgs; [
-		nerd-fonts._0xproto
-	];
+  # -- Theme & Fonts -------------------------------------------------------
+  fonts.packages = with pkgs; [
+    nerd-fonts._0xproto
+  ];
 
-	services.keyd = {
-		enable = true;
-		keyboards = {
-			default = {
-				ids = [ "*" "-706a:0002" ];
-				settings = {
-					main = {
-						capslock = "overload(control, esc)";
-						esc = "capslock";
-						leftalt = "leftmeta";
-						leftmeta = "leftalt";
-						rightalt = "layer(custom)";
-					};
-					otherlayer = {};
-				};
-				extraConfig = ''
-					[custom]
-					e = up
-					s = left
-					d = down
-					f = right
-					w = home
-					r = end
-					a = capslock
-				'';
-			};
-		};		
-	};
+  # -- Services ------------------------------------------------------------
+  services.displayManager.ly = {
+    enable = true;
+  };
 
-	services.displayManager.ly = {
-		enable = true;
-	};
+  services.udisks2 = {
+    enable = true;
+  };
 
-  # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
-  # services.pipewire = {
-  #   enable = true;
-  #   pulse.enable = true;
-  # };
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      default = {
+        ids = [
+          "*"
+          "-706a:0002"
+        ];
+        settings = {
+          main = {
+            capslock = "overload(control, esc)";
+            esc = "capslock";
+            leftalt = "leftmeta";
+            leftmeta = "leftalt";
+            rightalt = "layer(custom)";
+          };
+          otherlayer = { };
+        };
+        extraConfig = ''
+          					[custom]
+          					e = up
+          					s = left
+          					d = down
+          					f = right
+          					w = home
+          					r = end
+          					a = capslock
+          				'';
+      };
+    };
+  };
+
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+  };
 
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
@@ -196,4 +219,3 @@
   system.stateVersion = "26.05"; # Did you read the comment?
 
 }
-
