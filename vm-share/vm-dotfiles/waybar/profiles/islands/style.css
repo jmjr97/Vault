@@ -1,0 +1,111 @@
+/* ====================================================================== */
+/* Config: Waybar */
+/* File: profiles/islands/style.css */
+/* Platform: archbook */
+/* ====================================================================== */
+
+* {
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: Firacode Nerd Font Propo, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+
+window#waybar {
+	background: transparent;
+}
+
+tooltip {
+  /* background: #1a1b26; */
+	background: rgba(30,30,46,0.6);
+  border: 1px solid #7aa2f7;
+  border-radius: 8px;
+}
+
+tooltip label {
+  color: #a9b1d6;
+}
+
+#workspaces {
+	background: rgba(30,30,46,0.6);
+	color: #7aa2f7;
+	border-radius: 8px;
+}
+
+#workspaces button {
+	transition: all 200ms ease-in-out;
+  color: #7aa2f7;
+  padding: 0 8px;
+  border-radius: 6px;
+}
+
+#workspaces button label {
+  font-size: 20px;
+}
+
+#workspaces button.active {
+	min-width: 50px;
+  background: #7aa2f7;
+	color: #24273a;
+}
+
+#workspaces button.empty {
+	color: #494d64;
+}
+
+#clock {
+	background: rgba(30,30,46,0.6);
+	color: #7aa2f7;
+	border-radius: 8;
+	padding: 0 10px;
+	margin-left: 10px;
+}
+
+#launchers {
+	background: rgba(30,30,46,0.6);
+	color: #7aa2f7;
+	border-radius: 8;
+	padding: 0 10px;
+}
+
+#custom-web {
+	padding: 0 10px;
+}
+
+#custom-pacman,
+#pulseaudio,
+#temperature,
+#cpu,
+#memory,
+#disk,
+#battery,
+#tray,
+#network,
+#custom-notify,
+#idle_inhibitor {
+	background: rgba(30,30,46,0.6);
+	color: #7aa2f7;
+	border-radius: 8px;
+	padding: 0 10px;
+}
+
+#pulseaudio.muted {
+	color: #f7768e;
+}
+
+#custom-power {
+	background: rgba(30,30,46,0.6);
+	color: #7aa2f7;
+	border-radius: 8;
+	padding: 0 10px;
+	margin-right: 10px;
+}
+
+#custom-files:hover,
+#custom-web:hover,
+#custom-obsidian:hover,
+#pulseaudio:hover,
+#battery:hover,
+#idle_inhibitor:hover,
+#custom-power:hover {
+	color: #a9b1d6;
+}

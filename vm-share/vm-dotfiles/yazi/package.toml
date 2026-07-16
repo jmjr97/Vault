@@ -1,0 +1,31 @@
+# ======================================================================
+# Config: yazi
+# File: ~/.config/yazi/package.toml
+# Platform: shared
+# Link: https://github.com/sxyazi/yazi
+# ======================================================================
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-enter"
+rev = "8945e54"
+hash = "aef2b1a805b80cce573bb766f1459d88"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:mount"
+rev = "598cdb6"
+hash = "e3260d0b1feded8c8e3ae3afa1169e30"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "598cdb6"
+hash = "f0c8c378184d5f8abd1b095a443d336d"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:piper"
+rev = "598cdb6"
+hash = "d99cfbc3812e7738505f9e4bedb759cd"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:dracula"
+rev = "36c49ac"
+hash = "20624fcdfcf7e4e912de05e348065e5e"

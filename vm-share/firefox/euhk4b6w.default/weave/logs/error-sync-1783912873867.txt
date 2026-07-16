@@ -1,0 +1,26 @@
+1783912460078	Sync.SyncScheduler	DEBUG	Next sync in 3600000 ms. (why=schedule)
+1783912772058	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1783912858300	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1783912864995	Sync.SyncScheduler	DEBUG	Network link status changed to "down". Offline?: false
+1783912864995	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1783912864996	Sync.SyncScheduler	DEBUG	Next sync in 3600000 ms. (why=schedule)
+1783912864997	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1783912873854	Sync.SyncScheduler	DEBUG	Network link status changed to "up". Offline?: false
+1783912873854	Sync.SyncScheduler	DEBUG	Network link looks up. Syncing.
+1783912873857	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1783912873858	Sync.Service	DEBUG	User-Agent: Firefox/152.0.5 (Linux x86_64) FxSync/1.154.0.20260707140131.desktop
+1783912873858	Sync.Service	INFO	Starting sync at 2026-07-12 23:21:13 in browser session OL8uRdYjexz5
+1783912873858	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1783912873860	Sync.Status	INFO	Resetting Status.
+1783912873860	Sync.Status	DEBUG	Status.service: success.status_ok => success.status_ok
+1783912873860	FirefoxAccounts	DEBUG	FxAccountsProfileClient: Requested profile
+1783912873860	FirefoxAccounts	DEBUG	getOAuthToken enter
+1783912873860	FirefoxAccounts	TRACE	getCachedToken returning cached token
+1783912873860	FirefoxAccounts	DEBUG	getOAuthToken returning a cached token
+1783912873861	Services.Common.RESTRequest	DEBUG	GET request to https://profile.accounts.firefox.com/v1/profile
+1783912873864	Sync.Resource	WARN	GET request to https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/201288226/info/collections failed: [Exception... "The connection was refused"  nsresult: "0x804b000d (NS_ERROR_CONNECTION_REFUSED)"  location: "<unknown>"  data: no] No traceback available
+1783912873865	Sync.Status	DEBUG	Status.sync: success.sync => error.login.reason.network
+1783912873865	Sync.Status	DEBUG	Status.service: success.status_ok => error.sync.failed
+1783912873865	Sync.ErrorHandler	ERROR	Sync encountered an error: [Exception... "The connection was refused"  nsresult: "0x804b000d (NS_ERROR_CONNECTION_REFUSED)"  location: "<unknown>"  data: no] No traceback available
+1783912873865	Sync.SyncScheduler	DEBUG	Next sync in 3600000 ms. (why=reschedule)
+1783912873866	Sync.Service	DEBUG	Exception calling anonymous function: [Exception... "The connection was refused"  nsresult: "0x804b000d (NS_ERROR_CONNECTION_REFUSED)"  location: "<unknown>"  data: no] No traceback available

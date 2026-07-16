@@ -1,0 +1,184 @@
+// ======================================================================
+// Config: waybar
+// File: ~/.config/waybar/config.jsonc
+// Desc: bar
+// Platform: laptop
+// Link: https://github.com/Alexays/Waybar
+// ======================================================================
+
+{
+	"layer": "top",
+	"spacing": 4, // Gaps between modules (4px)
+
+	////////////
+	// layout //
+	////////////
+
+	"modules-left": [
+		"ext/workspaces",
+		"custom/break",
+		"tray",
+		"custom/break",
+		"group/launchers",
+		"hyprland/windowcount"
+	],
+	"modules-center": [
+		"custom/scroll-left",
+		"clock",
+		"custom/scroll-right"
+	],
+	"modules-right": [
+		"pulseaudio",
+		"custom/break",
+		"memory",
+		"custom/break",
+		"disk",
+		"custom/break",
+		"group/control"
+	],
+
+	////////////
+	// groups //
+	////////////
+
+	"group/launchers": {
+		"orientation": "horizontal",
+		"modules":[
+			"custom/files",
+			"custom/web",
+			"custom/obsidian"
+		]
+	},
+	"group/control": {
+		"orientation": "horizontal",
+		"modules":[
+			"idle_inhibitor",
+			"custom/notify",
+			"custom/power"
+		]
+	},
+
+	/////////////
+	// modules //
+	/////////////
+
+	"custom/break": {
+		"format": ""
+	},
+	// left modules //
+	"ext/workspaces": {
+		"format": "{icon}",
+		"on-click": "activate",
+		"format-icons": {
+			"1": "1",
+			"2": "2",
+			"3": "3",
+			"4": "4",
+			"5": "5"
+		},
+		"persistent-workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": []
+		},
+		"on-scroll-up": "~/Vault/scripts/waybar/hypr_dsp.sh workspace_next",
+		"on-scroll-down": "~/Vault/scripts/waybar/hypr_dsp.sh workspace_prev"
+	},
+	"tray": {
+		"icon-size": 20,
+		"spacing": 10,
+		"show-passive-items": true
+	},
+	"network": {
+		"interval": 60,
+		"interface": "wlan0",
+		"format": "{ifname}",
+		"format-wifi": "{essid} (<span foreground='#fab387'>{signalStrength}%</span>) ",
+		"format-disconnected": "", //An empty format will hide the module.
+		"max-length": 50,
+		"tooltip": false,
+		"on-click": "ghostty --class='com.me.float' -e impala"
+	},
+	"custom/files": {
+		"format": "",
+		"on-click": "dolphin"
+	},
+	"custom/web": {
+		"format": "󰖟",
+		"on-click": "firefox"
+	},
+	"hyprland/windowcount": {
+		"format": "<span color='#cdd6f4'></span>  <span color='#fab387'>{}</span>",
+		"format-empty": " ",
+		"separate-outputs": true
+	},
+	// center modules //
+	"custom/scroll-left": {
+    "format": "󰄽",
+		"tooltip": false,
+		"on-click": "~/Vault/scripts/waybar/hypr_dsp.sh left"
+  },
+	"clock": {
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"format": "{:%a, %b %d - <span color='#fab387'>%I:%M</span>}",
+		"calendar": {
+			"mode": "month",
+			"mode-mon-col": 3,
+			"format": {
+				"months": "<span size='20pt' color='#89b4fa'><b>{}</b></span>",
+				"days": "<span size='18pt' color='#bac2de'><b>{}</b></span>",
+				"weeks": "<span color='#a6e3a1'><b>{}</b></span>",
+				"weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+				"today": "<span color='#f38ba8'><b><u>{}</u></b></span>"
+			}
+		},
+		"actions": {
+			"on-click-right": "mode",
+			"on-scroll-up": "tz_up",
+			"on-scroll-down": "tz_down",
+			"on-scroll-up": "shift_up",
+			"on-scroll-down": "shift_down",
+			"on-click": "firefox https://calendar.google.com"
+		}
+	},
+	"custom/scroll-right": {
+    "format": "󰄾",
+		"tooltip": false,
+		"on-click": "~/Vault/scripts/waybar/hypr_dsp.sh right"
+  },
+	// right modules //
+	"pulseaudio": {
+		"max-volume": 150,
+		"scroll-step": 5, // %, can be a float
+		"format": "{icon} <span foreground='#fab387'>{volume}%</span>",
+		"format-muted": " <span foreground='#fab387'>{volume}%</span>",
+		"format-icons": {
+			"headphone": "",
+			"default": ["", "", ""]
+		},
+		"tooltip-format": " Left Click: Mute\nRight Click: Pavucontrol",
+		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"on-click-right": "pavucontrol"
+	},
+	"memory": {
+		"format": " <span foreground='#fab387'>{used}GB</span>",
+		"tooltip": false
+	},
+	"disk": {
+		"format": "󰋊 <span foreground='#fab387'>{percentage_used}%</span>"
+	},
+	"idle_inhibitor": {
+		"format": "{icon}",
+		"format-icons": {
+			"activated": "",
+			"deactivated": "󱋑"
+		}
+	},
+	"custom/power": {
+		"format": "⏻",
+		"on-click": "wlogout -b 5",
+		"tooltip": false
+	}
+}

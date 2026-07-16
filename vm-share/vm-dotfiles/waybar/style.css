@@ -1,0 +1,102 @@
+/* ======================================================================
+ * Config: Waybar
+ * File: ~/.config/waybar/style.css
+ * Desc: bar
+ * Platform: virtual machine
+ * Link: https://github.com/Alexays/Waybar
+ * ====================================================================== */
+
+* {
+	/* `otf-font-awesome` is required to be installed for icons */
+	font-family: '0xProto Nerd Font Propo', Helvetica, Arial, sans-serif;
+	font-size: 16px;
+}
+
+window#waybar {
+	background: rgba(26, 27, 38, 0.6);
+}
+
+tooltip {
+	background: rgba(26, 27, 38, 1.0);
+	border: 1px solid #89b4fa;
+	border-radius: 5px;
+}
+
+#custom-break {
+	color: #cdd6f4;
+	font-weight: bold;
+}
+
+/* left modules */
+#workspaces {
+	margin-left: 5;
+}
+
+#workspaces button {
+	padding: 3px;
+	color: #5b5b70;
+	border-radius: 0;
+}
+
+#workspaces button.empty {
+	color: #cdd6f4;
+}
+
+#workspaces button.active {
+	color: #89b4fa;
+	/* border-bottom: 2px solid #89b4fa; */
+	font-weight: bold;
+}
+
+#tray {
+	margin: 0 10px;
+}
+
+#network,
+#launchers,
+#custom-web {
+	color: #89b4fa;
+	margin: 0 10px;
+}
+
+/* center modules */
+#windowcount {
+	color: #89b4fa;
+}
+
+#custom-scroll-left,
+#custom-scroll-right,
+#clock {
+	color: #89b4fa;
+	margin: 0 10px;
+}
+
+/* right modules */
+#pulseaudio,
+#memory,
+#disk,
+#custom-power {
+	color: #89b4fa;
+	margin: 0 10px;
+}
+
+#idle_inhibitor {
+	color: #89b4fa;
+	margin: 0 10px;
+}
+
+/* mouse hover */
+#custom-scroll-left:hover,
+#custom-scroll-right:hover,
+#network:hover,
+#custom-files:hover,
+#custom-web:hover,
+#pulseaudio:hover,
+#idle_inhibitor:hover,
+#custom-power:hover {
+	color: #cdd6f4;
+}
+
+#idle_inhibitor.activated {
+	color: #f38ba8;
+}

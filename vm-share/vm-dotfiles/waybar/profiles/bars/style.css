@@ -1,0 +1,114 @@
+/* ====================================================================== */
+/* Config: Waybar */
+/* File: profiles/bars/style.css */
+/* Platform: archbook */
+/* ====================================================================== */
+
+@define-color main-bg #1a1b26;
+@define-color main-fg #a9b1d6;
+@define-color main-clr #7aa2f7;
+@define-color highlight #e0af68;
+@define-color alert #f7768e;
+
+* {
+	/* `otf-font-awesome` is required to be installed for icons */
+	font-family: Firacode Nerd Font Propo, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+}
+
+window#waybar {
+	background: rgba(30, 30, 46, 0.6);
+}
+
+tooltip {
+	background: @main-bg;
+	border: 1px solid @main-clr;
+	border-radius: 5px;
+}
+
+/* shared modules */
+#workspaces {
+	margin: 0;
+	padding: 0;
+	min-width: 0;
+}
+
+#workspaces button {
+	color: @main-clr;
+	border-bottom: 2px solid rgba(26, 27, 38, 0);
+	border-radius: 0;
+}
+
+#workspaces button.empty {
+	color: @main-fg;
+}
+
+#workspaces button.active {
+	color: @main-clr;
+	border-bottom: 2px solid @main-clr;
+	font-weight: bold;
+}
+
+#custom-break {
+	color: @main-fg;
+	font-weight: bold;
+}
+
+/* left modules */
+#tray {
+	margin: 0 10px;
+}
+
+#network,
+#launchers,
+#custom-web {
+	color: @main-clr;
+	margin: 0 10px;
+}
+
+/* center modules */
+#windowcount {
+	color: @main-clr;
+}
+
+#clock,
+#custom-weather {
+	color: @main-clr;
+	margin: 0 10px;
+}
+
+/* right modules */
+#pulseaudio,
+#temperature,
+#cpu,
+#memory,
+#disk,
+#custom-pacman,
+#battery,
+#control {
+	color: @main-clr;
+	margin: 0 10px;
+}
+
+#custom-notify {
+	color: @main-clr;
+	margin: 0 14px;
+}
+
+/* mouse hover */
+#network:hover,
+#custom-files:hover,
+#custom-web:hover,
+#custom-obsidian:hover,
+#custom-weather:hover,
+#pulseaudio:hover,
+#custom-pacman:hover,
+#idle_inhibitor:hover,
+#custom-notify:hover,
+#custom-power:hover {
+	color: @main-fg;
+}
+
+#idle_inhibitor.activated {
+	color: @alert;
+}
