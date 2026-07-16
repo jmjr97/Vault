@@ -9,21 +9,33 @@ in
   home.username = "john";
   home.homeDirectory = "/home/john";
   home.stateVersion = "26.05";
+  home.packages = [ ];
 
-  # programs.nix-search-tv.enableTelevisionIntegration = true;
+  home.pointerCursor = {
+    enable = true;
+    package = pkgs.catppuccin-cursors.mochaBlue;
+    name = "Catppuccin Cursors Dark";
+    size = 16;
+  };
 
-  home.packages = with pkgs; [
-    (pkgs.writeShellApplication {
-      name = "ns";
-      runtimeInputs = with pkgs; [
-        fzf
-        (nix-search-tv.overrideAttrs {
-          env.GOEXPERIMENT = "jsonv2";
-        })
-      ];
-      text = builtins.readFile "${pkgs.nix-search-tv.src}/nixpkgs.sh";
-    })
-  ];
+  gtk = {
+    enable = true;
+
+    theme = {
+      package = pkgs.catppuccin-gtk;
+      name = "Flat-Remix-GTK-Grey-Darkest";
+    };
+
+    iconTheme = {
+      package = pkgs.adwaita-icon-theme;
+      name = "Adwaita";
+    };
+
+    font = {
+      name = "0xProto Nerd Font";
+      size = 11;
+    };
+  };
 
   # -- Hyprland ---------------------------------------------
   xdg.configFile."hypr" = {
@@ -94,10 +106,10 @@ in
     recursive = true;
   };
 
-  xdg.configFile."fastfetch" = {
-    source = create_symlink "${dotfiles}/shared-configs/fastfetch/";
-    recursive = true;
-  };
+  # xdg.configFile."fastfetch" = {
+  #   source = create_symlink "${dotfiles}/shared-configs/fastfetch/";
+  #   recursive = true;
+  # };
 
   xdg.configFile."nwg-look" = {
     source = create_symlink "${dotfiles}/shared-configs/nwg-look/";
@@ -157,6 +169,67 @@ in
     recursive = true;
   };
 
+  # -- Fastfetch --------------------------------------------
+  home.file.".config/fastfetch/config.jsonc".text = ''
+    {
+      "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+      "logo": {
+        "type": "kitty",
+        "source": " ",
+        "width": 40,
+        "height": 20,
+        "padding": {
+          "left": 2,
+          "right": 2
+        }
+      },
+      "display": {
+        "separator": " \u001b[38;2;203;166;247m\u001b[0m ",
+        "constants": [
+          "\u001b[38;2;242;205;205m─────────────────\u001b[0m" // {$1}, used in Custom module
+        ],
+        "key": { "type": "icon", "paddingLeft": 2 }
+      },
+      "modules": [
+        {
+          "type": "custom",
+          // {#1} is equivalent to `\u001b[1m`. {#} is equivalent to `\u001b[m`
+          "format": "\u001b[38;2;242;205;205m┌\u001b[0m{$1} \u001b[38;2;203;166;247mHardware Information\u001b[0m {$1}\u001b[38;2;242;205;205m┐\u001b[0m"
+        },
+        { "type": "host", "keyColor": "#f5c2e7" },
+        { "type": "cpu", "keyColor": "#f5c2e7" },
+        { "type": "gpu", "keyColor": "#f5c2e7" },
+        { "type": "memory", "keyColor": "#f5c2e7" },
+        {
+          "type": "custom",
+          "format": "\u001b[38;2;242;205;205m└\u001b[0m{$1}\u001b[38;2;242;205;205m──────────────────────\u001b[0m{$1}\u001b[38;2;242;205;205m┘\u001b[0m"
+        },
+        { "type": "custom", "format": "" },
+        {
+          "type": "custom",
+          "format": "\u001b[38;2;242;205;205m┌\u001b[0m{$1} \u001b[38;2;203;166;247mSoftware Information\u001b[0m {$1}\u001b[38;2;242;205;205m┐\u001b[0m"
+        },
+        { "type": "os", "keyColor": "#f5c2e7" },
+        { "type": "kernel", "keyColor": "#f5c2e7" },
+        { "type": "lm", "keyColor": "#f5c2e7" },
+        { "type": "de", "keyColor": "#f5c2e7" },
+        { "type": "wm", "keyColor": "#f5c2e7" },
+        { "type": "shell", "keyColor": "#f5c2e7" },
+        { "type": "terminal", "keyColor": "#f5c2e7" },
+        { "type": "font", "keyColor": "#f5c2e7" },
+        { "type": "theme", "keyColor": "#f5c2e7" },
+        { "type": "icons", "keyColor": "#f5c2e7" },
+        { "type": "packages", "keyColor": "#f5c2e7" },
+        { "type": "uptime", "keyColor": "#f5c2e7" },
+        {
+          "type": "custom", // InformationEnd
+          "format": "\u001b[38;2;242;205;205m└\u001b[0m{$1}\u001b[38;2;242;205;205m──────────────────────\u001b[0m{$1}\u001b[38;2;242;205;205m┘\u001b[0m"
+        },
+        { "type": "colors", "symbol": "circle", "paddingLeft": 21 }
+      ]
+    }
+    	'';
+
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
   # shell provided by Home Manager. If you don't want to manage your shell
@@ -173,7 +246,7 @@ in
   #
   #  /etc/profiles/per-user/john/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-    # EDITOR = "emacs";
-  };
+  # home.sessionVariables = {
+  #   # EDITOR = "emacs";
+  # };
 }
