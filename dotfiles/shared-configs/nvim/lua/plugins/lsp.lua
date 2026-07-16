@@ -14,6 +14,7 @@ return {
 		vim.lsp.enable('basedpyright')
 		vim.lsp.enable('ts_ls')
 		vim.lsp.enable('qmlls')
+		vim.lsp.enable('nil')
 
 		vim.keymap.set('n', '<leader>lk', vim.lsp.buf.hover)
 		vim.keymap.set('n', '<leader>ld', vim.lsp.buf.definition)

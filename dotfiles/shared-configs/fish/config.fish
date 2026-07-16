@@ -23,11 +23,9 @@ if status is-interactive
 
 	# nixos
 	alias ne='nvim --cmd "cd ~/Vault/dotfiles/laptop/nixos/" +"lua Snacks.picker.files()"'
-	# alias ne='sudoedit /etc/nixos/configuration.nix'
-	# alias neho='sudoedit /etc/nixos/home.nix'
-	# alias nehw='sudoedit /etc/nixos/hardware-configuration.nix'
 	abbr nrs sudo nixos-rebuild switch
 	abbr nrt sudo nixos-rebuild test
+	abbr nlg nixos-rebuild list-generations
 
 	# pacman
 	abbr pi sudo pacman -S --needed

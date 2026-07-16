@@ -1,47 +1,145 @@
 { config, pkgs, ... }:
 
+let
+  dotfiles = "${config.home.homeDirectory}/Vault/dotfiles";
+  create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
+in
+
 {
-	home.username = "john";
-	home.homeDirectory = "/home/john";
-	home.stateVersion = "26.05"; 
+  home.username = "john";
+  home.homeDirectory = "/home/john";
+  home.stateVersion = "26.05";
 
-	# -- Hyprland ---------------------------------------------
-	# home.file.".config/hypr".source = /home/john/Vault/dotfiles/laptop/hyprland/hypr;
-	# home.file.".config/waybar".source = /home/john/Vault/dotfiles/laptop/hyprland/waybar;
-	# home.file.".config/swaync".source = /home/john/Vault/dotfiles/laptop/hyprland/swaync;
-	# home.file.".config/swayosd".source = /home/john/Vault/dotfiles/laptop/hyprland/swayosd;
-	# home.file.".config/rofi".source = /home/john/Vault/dotfiles/shared-configs/rofi;
-	# home.file.".config/wlogout".source = /home/john/Vault/dotfiles/shared-configs/wlogout;
+  # -- Hyprland ---------------------------------------------
+  xdg.configFile."hypr" = {
+    source = create_symlink "${dotfiles}/laptop/hyprland/hypr/";
+    recursive = true;
+  };
 
-	# -- Terminal ---------------------------------------------
-	# home.file.".config/fish".source = /home/john/Vault/dotfiles/shared-configs/fish;
-	# home.file.".config/ghostty".source = /home/john/Vault/dotfiles/shared-configs/ghostty;
-	# home.file.".config/starship.toml".source = /home/john/Vault/dotfiles/shared-configs/starship.toml;
+  xdg.configFile."waybar" = {
+    source = create_symlink "${dotfiles}/laptop/hyprland/waybar/";
+    recursive = true;
+  };
 
-	# -- Dev --------------------------------------------------
-	# home.file.".config/nvim".source = /home/john/Vault/dotfiles/shared-configs/nvim;
-	# home.file.".config/lazygit".source = /home/john/Vault/dotfiles/shared-configs/lazygit;
+  xdg.configFile."swaync" = {
+    source = create_symlink "${dotfiles}/laptop/hyprland/swaync/";
+    recursive = true;
+  };
 
-	# -- Applications -----------------------------------------
-	# home.file.".config/bat".source = /home/john/Vault/dotfiles/shared-configs/bat;
-	# home.file.".config/btop".source = /home/john/Vault/dotfiles/shared-configs/btop;
-	# home.file.".config/fastfetch".source = /home/john/Vault/dotfiles/shared-configs/fastfetch;
-	# home.file.".config/nwg-look".source = /home/john/Vault/dotfiles/shared-configs/nwg-look;
-	# home.file.".config/satty".source = /home/john/Vault/dotfiles/shared-configs/satty;
-	# home.file.".config/yazi".source = /home/john/Vault/dotfiles/shared-configs/yazi;
+  xdg.configFile."swayosd" = {
+    source = create_symlink "${dotfiles}/laptop/hyprland/swayosd/";
+    recursive = true;
+  };
 
-	# -- Misc -------------------------------------------------
-	# home.file.".themes".source = /home/john/Vault/dotfiles/.themes;
+  xdg.configFile."rofi" = {
+    source = create_symlink "${dotfiles}/shared-configs/rofi/";
+    recursive = true;
+  };
 
-	# -- Dropbox ----------------------------------------------
-	# home.file."Documents".source = /home/john/Dropbox/home/Documents;
-	# home.file."Pictures".source = /home/john/Dropbox/home/Pictures;
+  xdg.configFile."wlogout" = {
+    source = create_symlink "${dotfiles}/shared-configs/wlogout/";
+    recursive = true;
+  };
 
-	# -- Desktop Files ----------------------------------------
-	# home.file.".local/share/applications/nvim.desktop".source = /home/john/Vault/dotfiles/applications/nvim.desktop;
-	# home.file.".local/share/applications/localsend.desktop".source = /home/john/Vault/dotfiles/applications/localsend.desktop;
-	# home.file.".local/share/applications/dice-roller.desktop".source = /home/john/Vault/dotfiles/applications/dice-roller.desktop;
-	# home.file.".local/share/applications/wild-magic.desktop".source = /home/john/Vault/dotfiles/applications/wild-magic.desktop;
+  # -- Terminal ---------------------------------------------
+  xdg.configFile."fish" = {
+    source = create_symlink "${dotfiles}/shared-configs/fish/";
+    recursive = true;
+  };
 
-	# home.file.".local/share/applications/scripts".source = /home/john/Vault/dotfiles/applications/scripts;
+  xdg.configFile."ghostty" = {
+    source = create_symlink "${dotfiles}/shared-configs/ghostty/";
+    recursive = true;
+  };
+
+  xdg.configFile."starship.toml" = {
+    source = create_symlink "${dotfiles}/shared-configs/starship.toml";
+    recursive = true;
+  };
+
+  # -- Dev --------------------------------------------------
+  xdg.configFile."nvim" = {
+    source = create_symlink "${dotfiles}/shared-configs/nvim/";
+    recursive = true;
+  };
+
+  xdg.configFile."lazygit" = {
+    source = create_symlink "${dotfiles}/shared-configs/lazygit/";
+    recursive = true;
+  };
+
+  # -- Applications -----------------------------------------
+  xdg.configFile."bat" = {
+    source = create_symlink "${dotfiles}/shared-configs/bat/";
+    recursive = true;
+  };
+
+  xdg.configFile."btop" = {
+    source = create_symlink "${dotfiles}/shared-configs/btop/";
+    recursive = true;
+  };
+
+  xdg.configFile."fastfetch" = {
+    source = create_symlink "${dotfiles}/shared-configs/fastfetch/";
+    recursive = true;
+  };
+
+  xdg.configFile."nwg-look" = {
+    source = create_symlink "${dotfiles}/shared-configs/nwg-look/";
+    recursive = true;
+  };
+
+  xdg.configFile."satty" = {
+    source = create_symlink "${dotfiles}/shared-configs/satty/";
+    recursive = true;
+  };
+
+  xdg.configFile."yazi" = {
+    source = create_symlink "${dotfiles}/shared-configs/yazi/";
+    recursive = true;
+  };
+
+  # -- Misc -------------------------------------------------
+  home.file.".themes" = {
+    source = create_symlink "/home/john/.themes/";
+    recursive = true;
+  };
+
+  # -- Dropbox ----------------------------------------------
+  home.file."Documents" = {
+    source = create_symlink /home/john/Dropbox/home/Documents;
+    recursive = true;
+  };
+
+  home.file."Pictures" = {
+    source = create_symlink /home/john/Dropbox/home/Pictures;
+    recursive = true;
+  };
+
+  # -- Desktop Files ----------------------------------------
+  home.file.".local/share/applications/nvim.desktop" = {
+    source = create_symlink "${dotfiles}/applications/nvim.desktop";
+    recursive = true;
+  };
+
+  home.file.".local/share/applications/localsend.desktop" = {
+    source = create_symlink "${dotfiles}/applications/localsend.desktop";
+    recursive = true;
+  };
+
+  home.file.".local/share/applications/dice-roller.desktop" = {
+    source = create_symlink "${dotfiles}/applications/dice-roller.desktop";
+    recursive = true;
+  };
+
+  home.file.".local/share/applications/wild-magic.desktop" = {
+    source = create_symlink "${dotfiles}/applications/wild-magic.desktop";
+    recursive = true;
+  };
+
+  home.file.".local/share/applications/scripts" = {
+    source = create_symlink "${dotfiles}/applications/scripts/";
+    recursive = true;
+  };
+
 }

@@ -12,7 +12,7 @@ local shft = '+ SHIFT'
 -- system --
 ------------
 hl.bind(mod .. ctrl .. ' + Q', hl.dsp.window.close())
-hl.bind(mod .. ctrl .. ' + Backspace', hl.dsp.exec_cmd('$HOME/Vault/scripts/hyprland/reset-ui.sh'))
+hl.bind(mod .. ctrl .. ' + Backspace', hl.dsp.exec_cmd('$HOME/Vault/scripts/nixos/reset-ui.sh'))
 
 -- plugins --
 -------------

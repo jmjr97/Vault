@@ -1,19 +1,24 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
-let 
-	home-manager = builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-26.05.tar.gz;
+let
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-26.05.tar.gz";
 in
 {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-		(import "${home-manager}/nixos")
+    (import "${home-manager}/nixos")
   ];
 
-	home-manager.useUserPackages = true;
-	home-manager.useGlobalPkgs = true;
-	home-manager.backupFileExtension = "backup";
-	home-manager.users.john = import ./home.nix;
+  home-manager.useUserPackages = true;
+  home-manager.useGlobalPkgs = true;
+  home-manager.backupFileExtension = "backup";
+  home-manager.users.john = import ./home.nix;
 
   # -- Boot ----------------------------------------------------------------
   boot.loader.systemd-boot.enable = true;
@@ -30,8 +35,13 @@ in
 
   # -- System --------------------------------------------------------------
   time.timeZone = "America/New_York";
+  users.defaultUserShell = pkgs.fish;
+
   nixpkgs.config.allowUnfree = true;
-	users.defaultUserShell = pkgs.fish;
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # -- User ----------------------------------------------------------------
   users.users.john = {
@@ -64,7 +74,8 @@ in
     btop
     killall
     udisks2
-		pavucontrol
+    pavucontrol
+    lm_sensors
 
     # Desktop
     swaynotificationcenter
@@ -103,11 +114,12 @@ in
     # Languages
     python3
     lua
+    luarocks
     go
     nodejs
 
     # Themes
-		nwg-look
+    nwg-look
   ];
 
   # -- Theme & Fonts -------------------------------------------------------
@@ -140,18 +152,16 @@ in
             leftmeta = "leftalt";
             rightalt = "layer(custom)";
           };
-          otherlayer = { };
+          custom = {
+            e = "up";
+            s = "left";
+            d = "down";
+            f = "right";
+            w = "home";
+            r = "end";
+            a = "capslock";
+          };
         };
-        extraConfig = ''
-          					[custom]
-          					e = up
-          					s = left
-          					d = down
-          					f = right
-          					w = home
-          					r = end
-          					a = capslock
-          				'';
       };
     };
   };
@@ -161,10 +171,9 @@ in
     pulse.enable = true;
   };
 
-  # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
   # console = {
-  #   font = "Lat2-Terminus16";
+  #   font = "0xProto Nerd Font Mono";
   #   keyMap = "us";
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
@@ -183,8 +192,6 @@ in
   #   enableSSHSupport = true;
   # };
 
-  # List services that you want to enable:
-
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
@@ -194,28 +201,5 @@ in
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
-
-  # This option defines the first version of NixOS you have installed on this particular machine,
-  # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
-  #
-  # Most users should NEVER change this value after the initial install, for any reason,
-  # even if you've upgraded your system to a new NixOS release.
-  #
-  # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
-  # so changing it will NOT upgrade your system - see https://nixos.org/manual/nixos/stable/#sec-upgrading for how
-  # to actually do that.
-  #
-  # This value being lower than the current NixOS release does NOT mean your system is
-  # out of date, out of support, or vulnerable.
-  #
-  # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
-  # and migrated your data accordingly.
-  #
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "26.05"; # Did you read the comment?
-
 }

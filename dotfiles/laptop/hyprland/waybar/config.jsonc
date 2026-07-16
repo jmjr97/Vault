@@ -42,8 +42,8 @@
 		"custom/break",
 		"disk",
 		"custom/break",
-		"custom/pacman",
-		"custom/break",
+		// "custom/pacman",
+		// "custom/break",
 		"battery",
 		"custom/break",
 		"group/control"
@@ -185,8 +185,8 @@
 		"on-click-right": "pavucontrol"
 	},
 	"temperature": {
-		// "thermal-zone": 2,
-		// "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+		"thermal-zone": 5,
+		// "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
 		"critical-threshold": 80,
 		// "format-critical": "{temperatureC}°C {icon}",
 		"format": "{icon} <span foreground='#fab387'>{temperatureC}°C</span>",
@@ -204,14 +204,14 @@
 	"disk": {
 		"format": "󰋊 <span foreground='#fab387'>{percentage_used}%</span>"
 	},
-	"custom/pacman": {
-		"interval": 180,
-		"exec": "~/Vault/scripts/hyprland/updates.sh",
-		"on-click": "~/Vault/my-apps/pac-updates/pac-updates",
-		"on-click-right": "~/Vault/scripts/hyprland/updates.sh",
-		"format": "󰮯 <span foreground='#fab387'>{}</span>",
-    "tooltip-format": " Left Click: view\nRight Click: refesh"
-	},
+	// "custom/pacman": {
+	// 	"interval": 180,
+	// 	"exec": "~/Vault/scripts/hyprland/updates.sh",
+	// 	"on-click": "~/Vault/my-apps/pac-updates/pac-updates",
+	// 	"on-click-right": "~/Vault/scripts/hyprland/updates.sh",
+	// 	"format": "󰮯 <span foreground='#fab387'>{}</span>",
+	//    "tooltip-format": " Left Click: view\nRight Click: refesh"
+	// },
 	"battery": {
 		"states": {
 				// "good": 95,

@@ -12,6 +12,7 @@ return {
 			javascript = { 'prettier' },
 			json = { 'prettier' },
 			go = { 'gofmt' },
+			nix = { 'nixfmt' },
 		},
 		formatters = {
 			stylua = {
