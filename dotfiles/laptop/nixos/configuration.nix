@@ -1,6 +1,4 @@
 {
-  config,
-  lib,
   pkgs,
   ...
 }:
@@ -9,28 +7,29 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./packages.nix
   ];
 
-  # -- Boot ----------------------------------------------------------------
+  # -- Boot ----------------------------------------------------------
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # -- Network -------------------------------------------------------------
+  # -- Network -------------------------------------------------------
   networking.hostName = "nixbook"; # Define your hostname.
   networking.wireless.iwd.enable = true;
 
-  # -- Bluetooth -----------------------------------------------------------
+  # -- Bluetooth -----------------------------------------------------
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
-  # -- System --------------------------------------------------------------
+  # -- System --------------------------------------------------------
   time.timeZone = "America/New_York";
   users.defaultUserShell = pkgs.fish;
 
   nixpkgs.config.allowUnfree = true;
 
-  # -- User ----------------------------------------------------------------
+  # -- User ----------------------------------------------------------
   users.users.john = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
@@ -39,85 +38,84 @@
     ];
   };
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-    withUWSM = true;
-  };
-  programs.fish.enable = true;
+  # # -- Programs ------------------------------------------------------
+  #
+  #  programs.hyprland = {
+  #    enable = true;
+  #    xwayland.enable = true;
+  #    withUWSM = true;
+  #  };
+  #  programs.fish.enable = true;
+  #
+  #  # -- Packages ------------------------------------------------------
+  #  environment.systemPackages = with pkgs; [
+  #    # System
+  #    impala
+  #    git
+  #    wget
+  #    keyd
+  #    bluez
+  #    zip
+  #    unzip
+  #    libappindicator
+  #    bat
+  #    btop
+  #    killall
+  #    udisks2
+  #    pavucontrol
+  #    lm_sensors
+  #    xauth
+  #
+  #    # Desktop
+  #    swaynotificationcenter
+  #    waybar
+  #    hyprlock
+  #    hypridle
+  #    hyprpaper
+  #    hyprpicker
+  #    rofi
+  #    wlogout
+  #
+  #    # Terminal
+  #    ghostty
+  #    fish
+  #    starship
+  #    zoxide
+  #    eza
+  #    fzf
+  #    yazi
+  #    fastfetch
+  #
+  #    # Applications
+  #    kdePackages.dolphin
+  #    firefox
+  #    obsidian
+  #    dropbox
+  #    bluetui
+  #    lazygit
+  #
+  #    # Development
+  #    vim
+  #    neovim
+  #    uv
+  #    gcc
+  #    cargo
+  #
+  #    # Languages
+  #    python3
+  #    lua
+  #    luarocks
+  #    go
+  #    nodejs
+  #
+  #    # Themes
+  #    nwg-look
+  #    qt6Packages.qtstyleplugin-kvantum
+  #    qt6Packages.qt6ct
+  #    hyprcursor
+  #  ];
 
-  # -- Packages ------------------------------------------------------------
-  environment.systemPackages = with pkgs; [
-    # System
-    impala
-    git
-    wget
-    keyd
-    bluez
-    zip
-    unzip
-    libappindicator
-    bat
-    btop
-    killall
-    udisks2
-    pavucontrol
-    lm_sensors
-
-    # Desktop
-    swaynotificationcenter
-    waybar
-    hyprlock
-    hypridle
-    hyprpaper
-    hyprpicker
-    rofi
-    wlogout
-    hyprcursor
-
-    # Terminal
-    ghostty
-    fish
-    starship
-    zoxide
-    eza
-    fzf
-    yazi
-    fastfetch
-    # nix-search-tv
-
-    # Applications
-    kdePackages.dolphin
-    firefox
-    dropbox
-    bluetui
-    lazygit
-
-    # Development
-    vim
-    neovim
-    uv
-    gcc
-    cargo
-
-    # Languages
-    python3
-    lua
-    luarocks
-    go
-    nodejs
-
-    # Themes
-    nwg-look
-    qt6Packages.qtstyleplugin-kvantum
-    qt6Packages.qt6ct
-    catppuccin-gtk
-    catppuccin-kde
-    catppuccin-kvantum
-    catppuccin-cursors.mochaDark
-  ];
-
-  # -- Theme & Fonts -------------------------------------------------------
+  # -- Theme & Fonts -------------------------------------------------
   fonts.packages = with pkgs; [
     nerd-fonts._0xproto
   ];
@@ -133,7 +131,7 @@
     };
   };
 
-  # -- Services ------------------------------------------------------------
+  # -- Services ------------------------------------------------------
   services.displayManager.ly = {
     enable = true;
   };

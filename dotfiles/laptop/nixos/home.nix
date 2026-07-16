@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 let
   dotfiles = "${config.home.homeDirectory}/Vault/dotfiles";
@@ -10,32 +10,6 @@ in
   home.homeDirectory = "/home/john";
   home.stateVersion = "26.05";
   home.packages = [ ];
-
-  home.pointerCursor = {
-    enable = true;
-    package = pkgs.catppuccin-cursors.mochaBlue;
-    name = "Catppuccin Cursors Dark";
-    size = 16;
-  };
-
-  gtk = {
-    enable = true;
-
-    theme = {
-      package = pkgs.catppuccin-gtk;
-      name = "Flat-Remix-GTK-Grey-Darkest";
-    };
-
-    iconTheme = {
-      package = pkgs.adwaita-icon-theme;
-      name = "Adwaita";
-    };
-
-    font = {
-      name = "0xProto Nerd Font";
-      size = 11;
-    };
-  };
 
   # -- Hyprland ---------------------------------------------
   xdg.configFile."hypr" = {
@@ -106,11 +80,6 @@ in
     recursive = true;
   };
 
-  # xdg.configFile."fastfetch" = {
-  #   source = create_symlink "${dotfiles}/shared-configs/fastfetch/";
-  #   recursive = true;
-  # };
-
   xdg.configFile."nwg-look" = {
     source = create_symlink "${dotfiles}/shared-configs/nwg-look/";
     recursive = true;
@@ -126,9 +95,19 @@ in
     recursive = true;
   };
 
-  # -- Misc -------------------------------------------------
+  # -- Themes ----------------------------------------------
   home.file.".themes" = {
-    source = create_symlink "/home/john/.themes/";
+    source = create_symlink "${dotfiles}/.themes/";
+    recursive = true;
+  };
+
+  home.file.".local/share/icons/catppuccin-macchiato-dark-cursors" = {
+    source = create_symlink "${dotfiles}/.themes/.cursors/catppuccin-macchiato-dark-cursors/";
+    recursive = true;
+  };
+
+  home.file.".local/share/icons/Vortex-Dark-Icons" = {
+    source = create_symlink "${dotfiles}/.themes/.icons/Vortex-Dark-Icons/";
     recursive = true;
   };
 
@@ -246,7 +225,4 @@ in
   #
   #  /etc/profiles/per-user/john/etc/profile.d/hm-session-vars.sh
   #
-  # home.sessionVariables = {
-  #   # EDITOR = "emacs";
-  # };
 }
