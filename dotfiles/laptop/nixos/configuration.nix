@@ -73,6 +73,7 @@
     hyprpicker
     rofi
     wlogout
+    hyprcursor
 
     # Terminal
     ghostty
@@ -107,13 +108,30 @@
     nodejs
 
     # Themes
-    # nwg-look
+    nwg-look
+    qt6Packages.qtstyleplugin-kvantum
+    qt6Packages.qt6ct
+    catppuccin-gtk
+    catppuccin-kde
+    catppuccin-kvantum
+    catppuccin-cursors.mochaDark
   ];
 
   # -- Theme & Fonts -------------------------------------------------------
   fonts.packages = with pkgs; [
     nerd-fonts._0xproto
   ];
+
+  environment.variables.HYPRCURSOR_THEME = "Catppuccin-Mocha-Dark";
+  environment.variables.HYPRCURSOR_SIZE = "24";
+
+  nixpkgs.config.packageOverrides = pkgs: {
+    catppuccin-gtk = pkgs.catppuccin-gtk.override {
+      accents = [ "blue" ];
+      size = "standard";
+      variant = "mocha";
+    };
+  };
 
   # -- Services ------------------------------------------------------------
   services.displayManager.ly = {

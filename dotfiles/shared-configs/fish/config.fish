@@ -23,7 +23,7 @@ if status is-interactive
 
 	# nixos
 	alias ne='nvim --cmd "cd ~/Vault/dotfiles/laptop/nixos/" +"lua Snacks.picker.files()"'
-	abbr nrs sudo nixos-rebuild test --flake ~/Vault/dotfiles/laptop/nixos/
+	abbr nrs sudo nixos-rebuild switch --flake ~/Vault/dotfiles/laptop/nixos/
 	abbr nrt sudo nixos-rebuild test --flake ~/Vault/dotfiles/laptop/nixos/
 	abbr nlg nixos-rebuild list-generations
 
