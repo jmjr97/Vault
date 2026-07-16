@@ -19,6 +19,7 @@
     bluez
     zip
     unzip
+    hyprpolkitagent
     libappindicator
     bat
     btop
@@ -26,17 +27,19 @@
     udisks2
     pavucontrol
     lm_sensors
-    xauth
 
     # -- Desktop --
     swaynotificationcenter
+    swayosd
     waybar
     hyprlock
     hypridle
     hyprpaper
     hyprpicker
     rofi
+    rofi-calc
     wlogout
+    satty
 
     # -- Terminal --
     ghostty
@@ -49,16 +52,21 @@
     fastfetch
 
     # -- Applications --
-    kdePackages.dolphin
+    thunar
     firefox
     obsidian
     dropbox
     bluetui
     lazygit
+    gnome-disk-utility
+    kdePackages.kalk
+    kdePackages.kclock
+    kdePackages.gwenview
 
     # -- Development --
     vim
     neovim
+    # tree-sitter-cli
     uv
     gcc
     cargo
