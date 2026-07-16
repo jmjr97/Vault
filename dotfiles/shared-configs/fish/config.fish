@@ -23,9 +23,10 @@ if status is-interactive
 
 	# nixos
 	alias ne='nvim --cmd "cd ~/Vault/dotfiles/laptop/nixos/" +"lua Snacks.picker.files()"'
-	abbr nrs sudo nixos-rebuild switch
-	abbr nrt sudo nixos-rebuild test
+	abbr nrs sudo nixos-rebuild test --flake ~/Vault/dotfiles/laptop/nixos/
+	abbr nrt sudo nixos-rebuild test --flake ~/Vault/dotfiles/laptop/nixos/
 	abbr nlg nixos-rebuild list-generations
+	alias ns="nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history"
 
 	# pacman
 	abbr pi sudo pacman -S --needed

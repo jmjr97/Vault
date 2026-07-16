@@ -8,22 +8,9 @@ in
 {
   home.username = "john";
   home.homeDirectory = "/home/john";
-  home.stateVersion = "26.05";
+  home.stateVersion = "26.05"; # Please read the comment before changing.
 
-  # programs.nix-search-tv.enableTelevisionIntegration = true;
-
-  home.packages = with pkgs; [
-    (pkgs.writeShellApplication {
-      name = "ns";
-      runtimeInputs = with pkgs; [
-        fzf
-        (nix-search-tv.overrideAttrs {
-          env.GOEXPERIMENT = "jsonv2";
-        })
-      ];
-      text = builtins.readFile "${pkgs.nix-search-tv.src}/nixpkgs.sh";
-    })
-  ];
+  home.packages = [ ];
 
   # -- Hyprland ---------------------------------------------
   xdg.configFile."hypr" = {
