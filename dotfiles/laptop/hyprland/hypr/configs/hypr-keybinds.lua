@@ -12,15 +12,19 @@ local shft = '+ SHIFT'
 -- system --
 ------------
 hl.bind(mod .. ctrl .. ' + Q', hl.dsp.window.close())
-hl.bind(mod .. ctrl .. ' + Backspace', hl.dsp.exec_cmd('$HOME/Vault/scripts/nixos/reset-ui.sh'))
+hl.bind(mod .. ctrl .. ' + Backspace', hl.dsp.exec_cmd('$HOME/Vault/scripts/hyprland/reset-ui.sh'))
 
 -- plugins --
 -------------
 hl.bind('SUPER + Q', function()
-	if hl.plugin and hl.plugin.scrolloverview then
-		hl.plugin.scrolloverview.overview('toggle')
+	if hl.plugin and hl.plugin.gloview then
+		hl.dispatch(hl.plugin.gloview.toggle)
 	end
 end)
+
+-- hl.bind("SUPER + TAB", hl.plugin.gloview.toggle)
+-- hl.bind("SUPER + SHIFT + TAB", hl.plugin.gloview.desktop)
+-- hl.bind("SUPER + CTRL + TAB", hl.plugin.gloview.allworkspaces)
 
 local function get_bars()
 	return hl.get_config('plugin.hyprbars.enabled')
@@ -39,7 +43,7 @@ end)
 hl.bind(mod .. ' + Return', hl.dsp.exec_cmd('ghostty'))
 hl.bind(mod .. ctrl .. ' + Return', hl.dsp.exec_cmd('ghostty', { tag = 'float_d' }))
 hl.bind(mod .. ' + Space', hl.dsp.exec_cmd('rofi -m -1 -show drun'))
-hl.bind(mod .. ' + E', hl.dsp.exec_cmd('thunar'))
+hl.bind(mod .. ' + E', hl.dsp.exec_cmd('dolphin'))
 hl.bind(mod .. ctrl .. ' + E', hl.dsp.exec_cmd('ghostty -e yazi', { tag = 'float_d' }))
 hl.bind(mod .. ' + W', hl.dsp.exec_cmd('firefox'))
 hl.bind(mod .. ctrl .. ' + W', hl.dsp.exec_cmd('firefox --private-window'))

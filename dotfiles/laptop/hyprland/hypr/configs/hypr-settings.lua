@@ -63,7 +63,7 @@ hl.config({
 		force_default_wallpaper = 0,
 		disable_hyprland_logo = true,
 		mouse_move_focuses_monitor = false,
-		font_family = 'noto-fonts',
+		font_family = '0xProto Nerd Font',
 	},
 })
 

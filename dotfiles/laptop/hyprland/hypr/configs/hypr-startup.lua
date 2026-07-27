@@ -10,7 +10,7 @@ hl.on('hyprland.start', function()
 	hl.exec_cmd('waybar')
 	hl.exec_cmd('hyprpaper')
 	hl.exec_cmd('hypridle')
-	hl.exec_cmd('systemctl --user start hyprpolkitagent')
+	-- hl.exec_cmd('systemctl --user start hyprpolkitagent')
 	hl.exec_cmd('hyprctl setcursor "Catppuccin Macchiato Dark" 24')
 
 	hl.exec_cmd('swaync')

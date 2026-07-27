@@ -59,6 +59,7 @@ hl.device({
 hl.device({
 	name = 'asup1411:00-093a:200b-touchpad',
 	sensitivity = 0.2,
+	tap_to_click = true,
 })
 
 hl.gesture({

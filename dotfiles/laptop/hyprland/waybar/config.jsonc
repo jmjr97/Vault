@@ -185,11 +185,11 @@
 		"on-click-right": "pavucontrol"
 	},
 	"temperature": {
-		"thermal-zone": 5,
-		// "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+		// "thermal-zone": 5,
+		"hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
 		"critical-threshold": 80,
-		// "format-critical": "{temperatureC}°C {icon}",
 		"format": "{icon} <span foreground='#fab387'>{temperatureC}°C</span>",
+		"format-critical": "{icon} <span foreground='#f38ba8'>{temperatureC}°C</span>",
 		"format-icons": ["", "", "", "", ""],
 		"tooltip": false
 	},

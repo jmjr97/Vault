@@ -19,7 +19,7 @@ function Float()
 	hl.dispatch(hl.dsp.window.center())
 end
 
-if hl.plugin and hl.plugin.scrolloverview then
+if hl.plugin and hl.plugin.hyprbars then
 	hl.config({
 		plugin = {
 			hyprbars = {
