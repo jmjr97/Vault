@@ -5,6 +5,10 @@
 -- Link: https://github.com/hyprwm/hyprland-plugins/tree/main/hyprbars
 -- ======================================================================
 
+local mod = 'SUPER'
+-- local ctrl = '+ CONTROL'
+-- local shft = '+ SHIFT'
+
 function Maximize()
 	local width = hl.get_active_window().size.x
 	if width >= 1800 then
@@ -20,6 +24,18 @@ function Float()
 end
 
 if hl.plugin and hl.plugin.hyprbars then
+	-- keybind --
+	hl.bind(mod .. ' + T', function()
+		if hl.plugin and hl.plugin.hyprbars then
+			if hl.get_config('plugin.hyprbars.enabled') == true then
+				hl.config({ plugin = { hyprbars = { enabled = false } } })
+			else
+				hl.config({ plugin = { hyprbars = { enabled = true } } })
+			end
+		end
+	end)
+
+	-- config --
 	hl.config({
 		plugin = {
 			hyprbars = {

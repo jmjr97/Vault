@@ -14,24 +14,6 @@ local shft = '+ SHIFT'
 hl.bind(mod .. ctrl .. ' + Q', hl.dsp.window.close())
 hl.bind(mod .. ctrl .. ' + Backspace', hl.dsp.exec_cmd('$HOME/Vault/scripts/hyprland/reset-ui.sh'))
 
--- plugins --
--------------
--- overview --
-hl.bind('SUPER + Q', function()
-	if hl.plugin and hl.plugin.scrolloverview then
-		hl.plugin.scrolloverview.overview('toggle')
-	end
-end)
-
--- title bars --
-hl.bind(mod .. ' + T', function()
-	if hl.plugin and hl.plugin.hyprbars then
-		hl.config({ plugin = { hyprbars = { enabled = false } } })
-	else
-		hl.config({ plugin = { hyprbars = { enabled = true } } })
-	end
-end)
-
 -- applications --
 ------------------
 hl.bind(mod .. ' + Return', hl.dsp.exec_cmd('ghostty'))
@@ -161,8 +143,8 @@ end)
 hl.bind(mod .. ' + mouse:272', hl.dsp.window.drag(), { mouse = true })
 hl.bind(mod .. ' + mouse:273', hl.dsp.window.resize(), { mouse = true })
 
-hl.bind(mod .. ' + mouse_down', hl.dsp.layout('focus l'))
-hl.bind(mod .. ' + mouse_up', hl.dsp.layout('focus r'))
+hl.bind(mod .. ' + mouse_up', hl.dsp.layout('focus l'))
+hl.bind(mod .. ' + mouse_down', hl.dsp.layout('focus r'))
 
 -- swayosd --
 -------------

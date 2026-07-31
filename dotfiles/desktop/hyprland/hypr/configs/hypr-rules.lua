@@ -36,6 +36,7 @@ hl.window_rule({ match = { workspace = '10' }, scrolling_width = 1.0 })
 hl.window_rule({ match = { class = 'wild-magic' }, float = true, center = true })
 hl.window_rule({ match = { class = 'dice-roller' }, float = true, center = true })
 hl.window_rule({ match = { class = 'pac-updates' }, monitor = 'DP-1', float = true, move = { 1600, 50 } })
+hl.window_rule({ match = { title = 'arch-updates' }, monitor = 'DP-1', float = true, move = { 1600, 50 } })
 hl.window_rule({ match = { title = 'Test App' }, float = true, center = true })
 
 ---tui applications---

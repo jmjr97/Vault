@@ -15,19 +15,19 @@ if status is-interactive
 	fish_config theme choose catppuccin-mocha
 	abbr so source ~/.config/fish/config.fish
 
-	## navigation ##
+  # -- Navigation ------------------------------------------
 	alias ls='eza -a -s=type --icons=auto'
 	alias ll='eza -a -l -h -s=type --icons=auto'
 	alias ..='cd ..'
 	alias rd='z -'
 
-	# nixos
+  # -- Nixos -----------------------------------------------
 	alias ne='nvim --cmd "cd ~/Vault/dotfiles/laptop/nixos/" +"lua Snacks.picker.files()"'
 	abbr nrs sudo nixos-rebuild switch --flake ~/Vault/dotfiles/laptop/nixos/
 	abbr nrt sudo nixos-rebuild test --flake ~/Vault/dotfiles/laptop/nixos/
 	abbr nlg nixos-rebuild list-generations
 
-	# pacman
+  # -- Pacman ----------------------------------------------
 	abbr pi sudo pacman -S --needed
 	abbr pr sudo pacman -Rns
 	abbr pu sudo pacman -Syu
@@ -37,29 +37,29 @@ if status is-interactive
 	abbr pc checkupdates
 	abbr pro 'sudo pacman -Rns $(pacman -Qdtq)'
 
-	# neovim
+  # -- Neovim ----------------------------------------------
 	alias vim='nvim'
 	alias v='nvim .'
 	alias se='sudoedit'
 	alias oh='nvim ~/Dropbox/obsidian/home.md'
 	alias orn='nvim ~/Dropbox/obsidian/notes/_random.md'
 
-	# apps
+  # -- Apps ------------------------------------------------
 	alias cat='bat'
 	alias f='yazi'
 	alias ff='fastfetch'
 	alias top='btop'
 
-	# misc
+  # -- Misc ------------------------------------------------
 	abbr modx chmod u+x
+	abbr pwn sudo chown $USER:$USER 
 	abbr ze zoxide edit
 
-	# python
+  # -- Python ----------------------------------------------
 	abbr py python
 
-	## functions ##
-
-	# yazi cd on exit
+  # -- Functions -------------------------------------------
+	## yazi cd on exit
 	function f
 		set tmp (mktemp -t "yazi-cwd.XXXXXX")
 		command yazi $argv --cwd-file="$tmp"
@@ -71,24 +71,28 @@ if status is-interactive
 		ls
 	end
 
+	## cd with ls
 	function cd
 		zo $argv
 		echo -e "\n\e[2;3;4;33m$(pwd)\e[0m"
 		ls
 	end
 
+	## fzf cd with ls
 	function fzf_cd
 		fzf-cd-widget
 		echo -e "\n\e[2;3;4;33m$(pwd)\e[0m"
 		ls
 	end
 
+	## interactive cd
 	function cdi
 		zi $argv
 		echo -e "\n\e[2;3;4;33m$(pwd)\e[0m"
 		ls
 	end
 
+	## 
 	function cfg
 		~/Vault/scripts/launchers/configs.sh
 	end
@@ -98,6 +102,7 @@ if status is-interactive
 		starship module character
 	end
 
+	## reset terminal
 	function rs
 		cd
 		clear
