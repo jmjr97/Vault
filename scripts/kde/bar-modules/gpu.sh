@@ -6,7 +6,7 @@ function main() {
   # temp
   temp=$(nvidia-settings -q gpucoretemp | grep Attribute | awk '{print ($4+0)}')
 
-  echo "$temp°C"
+  echo "$temp°C "
 }
 
 main

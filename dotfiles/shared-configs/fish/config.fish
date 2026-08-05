@@ -12,7 +12,7 @@ if status is-interactive
 	set -Ux SUDO_EDITOR nvim
 	set -gx EDITOR nvim
 
-	fish_config theme choose catppuccin-mocha
+	fish_config theme choose "TokyoNight Night"
 	abbr so source ~/.config/fish/config.fish
 
   # -- Navigation ------------------------------------------

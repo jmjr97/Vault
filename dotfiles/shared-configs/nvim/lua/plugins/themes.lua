@@ -7,10 +7,16 @@
 
 return {
 	{
-		'catppuccin/nvim',
-		enabled = true,
+		'folke/tokyonight.nvim',
 		lazy = false,
-		name = 'catppuccin',
 		priority = 1000,
+		opts = {},
 	},
+	-- {
+	-- 	'catppuccin/nvim',
+	-- 	enabled = true,
+	-- 	lazy = false,
+	-- 	name = 'catppuccin',
+	-- 	priority = 1000,
+	-- },
 }

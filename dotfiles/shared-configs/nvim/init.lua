@@ -10,4 +10,5 @@ require('config.term')
 require('config.luasnip')
 
 vim.opt.showmode = false
-vim.cmd('colorscheme catppuccin-mocha')
+vim.cmd('colorscheme tokyonight')
+-- vim.cmd('colorscheme catppuccin-mocha')

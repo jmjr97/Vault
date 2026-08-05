@@ -1,7 +1,0 @@
-{"timestamp":1666599,"category":"doh","name":"state_enabled","extra":{"glean_timestamp":"1784987227568","value":"null"}}
-{"timestamp":1666599,"category":"doh","name":"evaluate_v2_heuristics","extra":{"evaluateReason":"netchange","networkID":"agY0PlHbc/IjO1u/jwTF0Wh87EGMlqUGv2aO2cipt0w=","steeredProvider":"","canaries":"","enterprise":"","platform":"","captiveState":"not_captive","glean_timestamp":"1784987227568","filtering":"","value":"enable_doh"}}
-{"timestamp":1681547,"category":"doh","name":"state_enabled","extra":{"value":"null","glean_timestamp":"1784987242516"}}
-{"timestamp":1681547,"category":"doh","name":"evaluate_v2_heuristics","extra":{"enterprise":"","value":"enable_doh","steeredProvider":"","canaries":"","captiveState":"not_captive","networkID":"agY0PlHbc/IjO1u/jwTF0Wh87EGMlqUGv2aO2cipt0w=","filtering":"","platform":"","glean_timestamp":"1784987242516","evaluateReason":"throttled"}}
-{"timestamp":2288631,"category":"doh","name":"state_enabled","extra":{"glean_timestamp":"1784987849599","value":"null"}}
-{"timestamp":2288631,"category":"doh","name":"evaluate_v2_heuristics","extra":{"canaries":"","value":"enable_doh","evaluateReason":"netchange","platform":"","steeredProvider":"","captiveState":"not_captive","enterprise":"","glean_timestamp":"1784987849599","filtering":"","networkID":"agY0PlHbc/IjO1u/jwTF0Wh87EGMlqUGv2aO2cipt0w="}}
-{"timestamp":2289726,"category":"doh","name":"state_shutdown","extra":{"glean_timestamp":"1784987850695","value":"null"}}
