@@ -10,8 +10,8 @@ gtk-single-instance = false
 theme = TokyoNight
 foreground = #a9b1d6
 background = #1a1b26
-background-opacity = 0.7
-background-blur = true
+# background-opacity = 0.7
+# background-blur = true
 
 split-inherit-working-directory = true
 bell-features = system
@@ -21,8 +21,8 @@ notify-on-command-finish-action = bell, notify
 font-family = "0xProto Nerd Font Mono"
 font-size = 12
 
-window-height = 28
-window-width = 110
+window-height = 32
+window-width = 140
 
 keybind = ctrl+;>r=reload_config
 keybind = ctrl+;>;=toggle_command_palette
