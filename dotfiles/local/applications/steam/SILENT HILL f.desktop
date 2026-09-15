@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=SILENT HILL f
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/2947440
+Icon=steam_icon_2947440
+Terminal=false
+Type=Application
+Categories=Steam;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=HumanitZ
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/1766060
+Icon=steam_icon_1766060
+Terminal=false
+Type=Application
+Categories=Steam;

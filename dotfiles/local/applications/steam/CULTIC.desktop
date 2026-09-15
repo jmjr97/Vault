@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=CULTIC
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/1684930
+Icon=steam_icon_1684930
+Terminal=false
+Type=Application
+Categories=Steam;

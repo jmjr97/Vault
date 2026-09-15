@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Tom Clancy's The Division 2
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/2221490
+Icon=steam_icon_2221490
+Terminal=false
+Type=Application
+Categories=Steam;

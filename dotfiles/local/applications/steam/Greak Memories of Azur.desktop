@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Greak: Memories of Azur
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/1311070
+Icon=steam_icon_1311070
+Terminal=false
+Type=Application
+Categories=Steam;

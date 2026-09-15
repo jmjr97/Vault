@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=The First Descendant
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/2074920
+Icon=steam_icon_2074920
+Terminal=false
+Type=Application
+Categories=Game;

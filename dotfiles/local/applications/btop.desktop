@@ -1,0 +1,10 @@
+[Desktop Entry]
+
+Type=Application
+Version=1.0
+Name=Btop
+Comment=Btop Tui
+Exec=/home/john/Vault/scripts/launchers/main-launcher.sh btop
+Icon=/home/john/Vault/icons/btop.png
+Terminal=false
+Categories=Utility;

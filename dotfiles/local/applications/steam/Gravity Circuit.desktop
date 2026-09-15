@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Gravity Circuit
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/858710
+Icon=steam_icon_858710
+Terminal=false
+Type=Application
+Categories=Steam;

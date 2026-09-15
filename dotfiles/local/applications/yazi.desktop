@@ -1,0 +1,9 @@
+[Desktop Entry]
+
+Type=Application
+Name=Yazi
+Comment=A Tui File Manager
+Exec=ghostty -e yazi
+Icon=/home/john/Vault/icons/yazi.png
+Terminal=false
+Categories=Utility;
