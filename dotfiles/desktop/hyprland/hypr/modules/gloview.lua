@@ -1,7 +1,7 @@
 -- ======================================================================
 -- Config: hyprland
 -- File: modues/gloview.lua
--- Platform: laptop
+-- Platform: desktop
 -- Link: https://github.com/fedsfarm/gloview
 -- ======================================================================
 

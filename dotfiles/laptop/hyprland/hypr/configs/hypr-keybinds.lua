@@ -14,18 +14,6 @@ local shft = '+ SHIFT'
 hl.bind(mod .. ctrl .. ' + Q', hl.dsp.window.close())
 hl.bind(mod .. ctrl .. ' + Backspace', hl.dsp.exec_cmd('$HOME/Vault/scripts/hyprland/reset-ui.sh'))
 
--- plugins --
--------------
-hl.bind('SUPER + Q', function()
-	if hl.plugin and hl.plugin.gloview then
-		hl.dispatch(hl.plugin.gloview.toggle)
-	end
-end)
-
--- hl.bind("SUPER + TAB", hl.plugin.gloview.toggle)
--- hl.bind("SUPER + SHIFT + TAB", hl.plugin.gloview.desktop)
--- hl.bind("SUPER + CTRL + TAB", hl.plugin.gloview.allworkspaces)
-
 local function get_bars()
 	return hl.get_config('plugin.hyprbars.enabled')
 end

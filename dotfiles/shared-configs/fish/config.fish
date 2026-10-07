@@ -21,12 +21,6 @@ if status is-interactive
 	alias ..='cd ..'
 	alias rd='z -'
 
-  # -- Nixos -----------------------------------------------
-	alias ne='nvim --cmd "cd ~/Vault/dotfiles/laptop/nixos/" +"lua Snacks.picker.files()"'
-	abbr nrs sudo nixos-rebuild switch --flake ~/Vault/dotfiles/laptop/nixos/
-	abbr nrt sudo nixos-rebuild test --flake ~/Vault/dotfiles/laptop/nixos/
-	abbr nlg nixos-rebuild list-generations
-
   # -- Pacman ----------------------------------------------
 	abbr pi sudo pacman -S --needed
 	abbr pr sudo pacman -Rns
@@ -36,6 +30,13 @@ if status is-interactive
 	abbr pqe pacman -Qe
 	abbr pc checkupdates
 	abbr pro 'sudo pacman -Rns $(pacman -Qdtq)'
+	abbr ya yay --noconfirm
+
+  # -- Nixos -----------------------------------------------
+	# alias ne='nvim --cmd "cd ~/Vault/dotfiles/laptop/nixos/" +"lua Snacks.picker.files()"'
+	# abbr nrs sudo nixos-rebuild switch --flake ~/Vault/dotfiles/laptop/nixos/
+	# abbr nrt sudo nixos-rebuild test --flake ~/Vault/dotfiles/laptop/nixos/
+	# abbr nlg nixos-rebuild list-generations
 
   # -- Neovim ----------------------------------------------
 	alias vim='nvim'

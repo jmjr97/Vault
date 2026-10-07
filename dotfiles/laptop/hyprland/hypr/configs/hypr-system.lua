@@ -57,6 +57,18 @@ hl.device({
 })
 
 hl.device({
+	name = 'synps/2-synaptics-touchpad',
+	sensitivity = 0,
+	tap_to_click = true,
+})
+
+hl.device({
+	name = 'tpps/2-elan-trackpoint',
+	sensitivity = -0.8,
+	tap_to_click = true,
+})
+
+hl.device({
 	name = 'asup1411:00-093a:200b-touchpad',
 	sensitivity = 0.2,
 	tap_to_click = true,

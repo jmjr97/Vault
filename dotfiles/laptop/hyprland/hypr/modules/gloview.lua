@@ -5,7 +5,13 @@
 -- Link: https://github.com/fedsfarm/gloview
 -- ======================================================================
 
-if hl.plugin and hl.plugin.hyprbars then
+local mod = 'SUPER'
+-- local ctrl = '+ CONTROL'
+-- local shft = '+ SHIFT'
+
+if hl.plugin and hl.plugin.gloview then
+	hl.bind(mod .. ' + Q', hl.plugin.gloview.toggle)
+
 	hl.config({
 		plugin = {
 			gloview = {

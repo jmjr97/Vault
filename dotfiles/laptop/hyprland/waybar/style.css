@@ -65,10 +65,14 @@ tooltip {
 }
 
 #custom-scroll-left,
-#custom-scroll-right,
-#clock,
-#custom-weather {
+#custom-scroll-right {
 	color: #89b4fa;
+	/* margin: 0 10px; */
+}
+
+#custom-weather,
+#clock {
+	color: #fab387;
 	margin: 0 10px;
 }
 

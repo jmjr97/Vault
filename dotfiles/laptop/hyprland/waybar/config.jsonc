@@ -42,8 +42,8 @@
 		"custom/break",
 		"disk",
 		"custom/break",
-		// "custom/pacman",
-		// "custom/break",
+		"custom/pacman",
+		"custom/break",
 		"battery",
 		"custom/break",
 		"group/control"
@@ -204,14 +204,14 @@
 	"disk": {
 		"format": "󰋊 <span foreground='#fab387'>{percentage_used}%</span>"
 	},
-	// "custom/pacman": {
-	// 	"interval": 180,
-	// 	"exec": "~/Vault/scripts/hyprland/updates.sh",
-	// 	"on-click": "~/Vault/my-apps/pac-updates/pac-updates",
-	// 	"on-click-right": "~/Vault/scripts/hyprland/updates.sh",
-	// 	"format": "󰮯 <span foreground='#fab387'>{}</span>",
-	//    "tooltip-format": " Left Click: view\nRight Click: refesh"
-	// },
+	"custom/pacman": {
+		"interval": 180,
+		"exec": "~/Vault/scripts/hyprland/updates.sh",
+		"on-click": "~/Vault/my-apps/arch-updates/arch-updates",
+		"on-click-right": "~/Vault/scripts/hyprland/updates.sh",
+		"format": "󰮯 <span foreground='#fab387'>{}</span>",
+	   "tooltip-format": " Left Click: view\nRight Click: refesh"
+	},
 	"battery": {
 		"states": {
 				// "good": 95,

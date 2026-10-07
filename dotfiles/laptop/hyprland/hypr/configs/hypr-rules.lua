@@ -25,7 +25,7 @@ hl.window_rule({ match = { class = 'firefox' }, scrolling_width = 1.0 })
 -------------
 hl.window_rule({ match = { class = 'wild-magic' }, float = true, center = true })
 hl.window_rule({ match = { class = 'dice-roller' }, float = true, center = true })
-hl.window_rule({ match = { class = 'pac-updates' }, float = true, move = { 1520, 50 } })
+hl.window_rule({ match = { title = 'arch-updates' }, float = true, move = { 1520, 50 } })
 
 -- tui applications --
 ----------------------
