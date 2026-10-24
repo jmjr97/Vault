@@ -53,7 +53,7 @@ hl.config({
 
 hl.device({
 	name = 'logi-m240-mouse',
-	sensitivity = -0.2,
+	sensitivity = -0.4,
 })
 
 hl.device({
