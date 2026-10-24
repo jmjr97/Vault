@@ -31,6 +31,7 @@ if status is-interactive
 	abbr pc checkupdates
 	abbr pro 'sudo pacman -Rns $(pacman -Qdtq)'
 	abbr ya yay --noconfirm
+	abbr yas yay -S --noconfirm
 
   # -- Nixos -----------------------------------------------
 	# alias ne='nvim --cmd "cd ~/Vault/dotfiles/laptop/nixos/" +"lua Snacks.picker.files()"'
