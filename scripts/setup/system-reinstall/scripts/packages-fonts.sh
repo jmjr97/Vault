@@ -8,8 +8,8 @@ fonts=(
 	ttf-0xproto-nerd
 	noto-fonts
 	noto-fonts-cjk
-	noto-fonts-emoji
-	noto-fonts-extra
+	# noto-fonts-emoji
+	# noto-fonts-extra
 )
 
 sudo pacman -S --needed --noconfirm ${fonts[*]}

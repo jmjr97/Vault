@@ -21,6 +21,7 @@ hypr=(
 	archlinux-xdg-menu
 	bluetui
 	pavucontrol
+	cliphist
 )
 
 sudo pacman -S --needed --noconfirm ${hypr[*]}

@@ -17,9 +17,10 @@ apps=(
 	bat
 	btop
 	gnome-disk-utility
-	kalk
-	kclock
-	gwenview
+	ark
+	# kalk
+	# kclock
+	# gwenview
 )
 
 sudo pacman -S --needed --noconfirm ${apps[*]}

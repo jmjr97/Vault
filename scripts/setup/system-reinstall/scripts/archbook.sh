@@ -4,12 +4,13 @@
 # File: scripts/misc.sh
 # ======================================================================
 
-if [ ! -d ~/.local/share/icons/ ]; then
-	mkdir -p "~/.local/share/icons/"
+echo "in archbook.sh"
+
+if [ ! -d ~/.local/share/icons ]; then
+	mkdir -p "~/.local/share/icons"
 fi
 
-cp -r ~/.themes/catppuccin-macchiato-dark-cursors/ "~/.local/share/icons/"
-cp -r ~/.themes/Vortex-Dark-Icons/ "~/.local/share/icons/"
+cp -r "~/Vault/dotfiles/.themes/catppuccin-macchiato-dark-cursors" "~/.local/share/icons"
 
 # keyd
 if ! pacman -Qi keyd >& /dev/null; then
@@ -17,8 +18,11 @@ if ! pacman -Qi keyd >& /dev/null; then
 fi
 
 if [ ! -d /etc/keyd/ ]; then
-	sudo mkdir /etc/keyd/
+	sudo mkdir /etc/keyd
 fi
 
-sudo cp ~/Vault/dotfiles/laptop/keyd /etc/keyd/default.conf
+if [ ! -f /etc/keyd/default.conf ]; then
+	sudo cp ~/Vault/dotfiles/laptop/keyd /etc/keyd/default.conf
+fi
+
 sudo systemctl enable --now keyd

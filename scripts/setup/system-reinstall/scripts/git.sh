@@ -7,7 +7,7 @@
 echo -e "\nGit setup:"
 
 if [ ! -d ~/.ssh ]; then
-	cp ../../laptop/.ssh/ ~/.ssh/
+	cp -r ../../laptop/.ssh/ ~/.ssh/
 fi
 
 if [ ! -f ~/.gitconfig ]; then
