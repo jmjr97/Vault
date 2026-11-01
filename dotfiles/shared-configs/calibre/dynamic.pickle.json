@@ -1,0 +1,34 @@
+{
+  "add a plugin dialog": "/home/john/Downloads",
+  "catalogs_to_be_synced": {
+    "__class__": "set",
+    "__value__": []
+  },
+  "database location dialog": "/home/john/Dropbox/home/Documents/ebooks/",
+  "notified-version-updates": {
+    "__class__": "set",
+    "__value__": [
+      "9.17"
+    ]
+  },
+  "sort_history": [
+    [
+      "series",
+      true
+    ],
+    [
+      "title",
+      true
+    ],
+    [
+      "series",
+      true
+    ],
+    [
+      "timestamp",
+      false
+    ]
+  ],
+  "welcome_wizard_device": "default",
+  "welcome_wizard_was_run": true
+}

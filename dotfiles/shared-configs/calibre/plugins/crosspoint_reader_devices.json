@@ -1,0 +1,38 @@
+{
+  "books": {
+    "crosspoint-10-0-0-41": {
+      "/Egan, Greg/Diaspora - Greg Egan.epub": {
+        "authors": [
+          "Greg Egan"
+        ],
+        "size": 393838,
+        "title": "Diaspora",
+        "uuid": "a8efd1a9-3824-438e-a3f4-5c0eb9efaf56"
+      },
+      "/Karpyshyn, Drew/Darth Bane 1_ Path of Destruction - Drew Karpyshyn.epub": {
+        "authors": [
+          "Drew Karpyshyn"
+        ],
+        "size": 333909,
+        "title": "Darth Bane 1: Path of Destruction",
+        "uuid": "f8e7a107-092d-488f-85fa-85ae925ed134"
+      },
+      "/Karpyshyn, Drew/Darth Bane 2_ Rule of Two - Drew Karpyshyn.epub": {
+        "authors": [
+          "Drew Karpyshyn"
+        ],
+        "size": 305096,
+        "title": "Darth Bane 2: Rule of Two",
+        "uuid": "068fdd58-b20f-477d-bfd0-5eba3c450921"
+      },
+      "/King, Stephen/Under the Dome - King, Stephen.epub": {
+        "authors": [
+          "King, Stephen"
+        ],
+        "size": 1519328,
+        "title": "Under the Dome",
+        "uuid": "017f49b6-ab8c-42cf-8147-d8f1da26b7d8"
+      }
+    }
+  }
+}
